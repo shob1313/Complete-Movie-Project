@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - Online Movie Booking</title>
+    <link rel="icon" href="https://www.freeiconspng.com/thumbs/hd-tickets/download-ticket-ticket-free-entertainment-icon-orange-ticket-design-0.png">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .error-page {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        .error-page h1 {
+            font-size: 6rem;
+            color: #dc3545;
+        }
+        .error-page h2 {
+            font-size: 2rem;
+            color: #343a40;
+        }
+        .error-page p {
+            font-size: 1.2rem;
+            color: #6c757d;
+        }
+        .error-page .btn-primary {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header class="bg-dark text-white py-2 sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-dark ">
+    <a class="navbar-brand" href="index.html">Movie<span class="text-warning">Book</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <form class="form-inline my-2 my-lg-0 ml-auto">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search movies..." aria-label="Search">
+        <select class="custom-select mr-sm-2 my-2 my-sm-0">
+          <option selected>Select City</option>
+          <option value="nyc" selected>New York</option>
+          <option value="la">Los Angeles</option>
+          <option value="ch">Chicago</option>
+        </select>
+        <div class="dropdown">
+          <button class="btn btn-outline-secondary text-white dropdown-toggle" type="button" id="userMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="User" class="rounded-circle border mr-2"> John Doe
+          </button>
+          <div class="dropdown-menu" aria-labelledby="userMenuButton">
+            <a class="dropdown-item text-info" href="profile.html">Profile</a>
+            <a class="dropdown-item text-info" href="dashboard.html">Dashboard</a>
+            <a class="dropdown-item text-danger" href="#">Sign Out</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </nav>
+</header>
+    <!-- Error Page Content -->
+    <section class="error-page">
+        <div class="container">
+            <h1>404</h1>
+            <h2>Page Not Found</h2>
+            <p>Sorry, the page you are looking for does not exist or has been moved. Please check the URL or return to the homepage.</p>
+            <a href="index.html" class="btn btn-outline-primary btn-sm mt-4">Go to Homepage</a>
+        </div>
+    </section>
+
+    <footer class="footer text-center">
+        <div class="container">
+        <p class="mb-1"><strong>Movie<span class="text-warning">Book</span></strong> &copy; 2024</p>
+        <div class="social-icons mb-3">
+            <a href="https://twitter.com" target="_blank" class="mr-3"><i class="fa fa-twitter fa-lg"></i></a>
+            <a href="https://instagram.com" target="_blank" class="mr-3"><i class="fa fa-instagram fa-lg"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="fa fa-youtube fa-lg"></i></a>
+        </div>
+        <div>
+            <a href="about_us.html" class="text-white">About Us</a> | 
+            <a href="contact_us.html" class="text-white">Contact</a> | 
+            <a href="privacy_policy.html" class="text-white">Privacy Policy</a>
+        </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Online Movie Booking</title>
+    <link rel="icon" href="https://www.freeiconspng.com/thumbs/hd-tickets/download-ticket-ticket-free-entertainment-icon-orange-ticket-design-0.png">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-us {
+            padding: 50px 0;
+            background-color: #f8f9fa;
+        }
+        .contact-us h2 {
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        .contact-us .form-container, .contact-us .info-container {
+            padding: 20px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .form-container {
+            margin-bottom: 30px;
+        }
+        .info-container {
+            background-color: #e9ecef; /* Light gray background to distinguish sections */
+        }
+        .info-container .map-container {
+            margin-top: 20px;
+        }
+        .map
+        {
+            border-radius: 20px;
+        }
+        .info-container h5 {
+            margin-bottom: 10px;
+        }
+        @media (max-width: 767px) {
+            .form-container, .info-container {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header class="bg-dark text-white py-2 sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <a class="navbar-brand" href="index.html">Movie<span class="text-warning">Book</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <form class="form-inline my-2 my-lg-0 ml-auto">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search movies..." aria-label="Search">
+          <select class="custom-select mr-sm-2 my-2 my-sm-0">
+            <option selected>Select City</option>
+            <option value="nyc" selected>New York</option>
+            <option value="la">Los Angeles</option>
+            <option value="ch">Chicago</option>
+          </select>
+          <div class="dropdown">
+            <button class="btn btn-outline-secondary text-white dropdown-toggle" type="button" id="userMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="User" class="rounded-circle border mr-2"> John Doe
+            </button>
+            <div class="dropdown-menu" aria-labelledby="userMenuButton">
+              <a class="dropdown-item text-info" href="profile.html">Profile</a>
+              <a class="dropdown-item text-info" href="dashboard.html">Dashboard</a>
+              <a class="dropdown-item text-danger" href="#">Sign Out</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </nav>
+  </header>
+    <!-- Contact Us Section -->
+    <section class="contact-us">
+        <div class="container">
+            <div class="row mb-2">
+                <div class="col-12 text-center">
+                    <h2 class="mb-1">Contact Us</h2>
+                    <p class="text-secondary">Be in touch..!</p>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Form Container -->
+                <div class="col-md-6 my-2">
+                    <div class="form-container">
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" placeholder="Your Phone Number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Suggestion</label>
+                                <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-outline-primary btn-sm">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Info Container -->
+                <div class="col-md-6 my-2">
+                    <div class="info-container">
+                        <h5>Phone Number</h5>
+                        <p class="text-muted"><i class="fa fa-phone"></i> +1 234 567 890</p>
+                        
+                        <h5>Email</h5>
+                        <p class="text-muted"><i class="fa fa-envelope"></i> contact@moviebook.com</p>
+                        
+                        <h5>Address</h5>
+                        <p class="text-muted"><i class="fa fa-map-marker"></i> 123 Movie Street, Cinema City, NY 12345, USA</p>
+                        
+                        <div class="map-container">
+                            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.469448146067!2d-74.0060156849394!3d40.71277527933111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a316229c495%3A0x16f5b0d07c3e7267!2s123%20Movie%20Street%2C%20New%20York%2C%20NY%2010007%2C%20USA!5e0!3m2!1sen!2s!4v1624325494342!5m2!1sen!2s" width="100%" height="237" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+        <p class="mb-1"><strong>Movie<span class="text-warning">Book</span></strong> &copy; 2024</p>
+        <div class="social-icons mb-3">
+            <a href="https://twitter.com" target="_blank" class="mr-3"><i class="fa fa-twitter fa-lg"></i></a>
+            <a href="https://instagram.com" target="_blank" class="mr-3"><i class="fa fa-instagram fa-lg"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="fa fa-youtube fa-lg"></i></a>
+        </div>
+        <div>
+            <a href="about_us.html" class="text-white">About Us</a> | 
+            <a href="contact_us.html" class="text-white">Contact</a> | 
+            <a href="privacy_policy.html" class="text-white">Privacy Policy</a>
+        </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

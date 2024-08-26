@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MovieBook</title>
+  <link rel="icon" href="https://www.freeiconspng.com/thumbs/hd-tickets/download-ticket-ticket-free-entertainment-icon-orange-ticket-design-0.png">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="bg-dark text-white py-2 sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-dark ">
+    <a class="navbar-brand" href="index.html">Movie<span class="text-warning">Book</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <form class="form-inline my-2 my-lg-0 ml-auto">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search movies..." aria-label="Search">
+        <select class="custom-select mr-sm-2 my-2 my-sm-0">
+          <option selected>Select City</option>
+          <option value="nyc" selected>New York</option>
+          <option value="la">Los Angeles</option>
+          <option value="ch">Chicago</option>
+        </select>
+        <div class="dropdown">
+          <button class="btn btn-outline-secondary text-white dropdown-toggle" type="button" id="userMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="User" class="rounded-circle border mr-2"> John Doe
+          </button>
+          <div class="dropdown-menu" aria-labelledby="userMenuButton">
+            <a class="dropdown-item text-info" href="profile.html">Profile</a>
+            <a class="dropdown-item text-info" href="dashboard.html">Dashboard</a>
+            <a class="dropdown-item text-danger" href="#">Sign Out</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </nav>
+</header>
+
+
+<!-- Multiplex Details Section -->
+<section class="container my-4">
+    <div class="row bg-light p-4 rounded shadow-sm">
+      <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
+        <div class="d-flex flex-column align-items-start mb-3 mb-md-0">
+          <h4 class="text-primary mb-1">Multiplex 1</h4>
+          <p class="text-muted mb-0"><i class="fa fa-map-marker text-danger mr-1"></i> Area Name: XXX</p>
+        </div>
+        <div class="d-flex flex-column align-items-start mb-3 mb-md-0">
+          <span class="badge badge-outline-info mb-2"><i class="fa fa-ticket mr-1"></i> M-Ticket Available</span>
+          <span class="badge badge-outline-warning"><i class="fa fa-cutlery mr-1"></i> Food & Beverages Available</span>
+        </div>
+        <div class="d-flex flex-column align-items-start mb-3 mb-md-0">
+          <p class="text-muted mb-1"><i class="fa fa-film mr-1 text-danger"></i> No. of Shows: 4</p>
+          <p class="text-muted mb-0"><i class="fa fa-tv mr-1 text-danger"></i> No. of Screens: 4</p>
+        </div>
+        <div class="d-flex align-items-center">
+          <span class="text-muted mr-2">4.5</span>
+          <div>
+            <i class="fa fa-star text-warning"></i>
+            <i class="fa fa-star text-warning"></i>
+            <i class="fa fa-star text-warning"></i>
+            <i class="fa fa-star text-warning"></i>
+            <i class="fa fa-star-half-o text-warning"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="row">
+        <!-- Date Display -->
+        <div class="col-md-8 d-flex align-items-center">
+            <div class="d-flex flex-wrap">
+                <button class="btn btn-outline-primary m-1" data-date="2024-08-15" id="date-2024-08-15">15 Aug</button>
+                <button class="btn btn-outline-primary m-1" data-date="2024-08-16" id="date-2024-08-16">16 Aug</button>
+                <button class="btn btn-outline-primary m-1" data-date="2024-08-17" id="date-2024-08-17">17 Aug</button>
+                <button class="btn btn-outline-primary m-1" data-date="2024-08-18" id="date-2024-08-18">18 Aug</button>
+                <button class="btn btn-outline-primary m-1" data-date="2024-08-19" id="date-2024-08-19">19 Aug</button>
+            </div>
+        </div>
+        <!-- Language Details -->
+        <div class="col-md-4 text-md-right mt-sm-0 mt-2">
+          <h5 class="font-weight-bold"><i class="fa fa-map"></i> Locate on map</h5>
+          <a href="https://maps.app.goo.gl/beDqpGbAMzRmaoE26" target="_blank" class="text-success">Get directions</a>
+        </div>
+    </div>
+</section>
+  
+  <section class="container my-3">
+    <div class="row">
+      <div class="col-md-6 my-1">
+        <div class="card mb-3 multiplex-card">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="https://wallpapercave.com/wp/wp10314725.jpg" class="movie-card-img" alt="Movie Poster">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                      <h5 class="card-title">Movie Title</h5>
+                      <p class="small card-subtitle text-primary"><i class="fa fa-tv"></i> Screen no : <span class="text-muted">01</span></p>
+                      <p class="small my-1 card-text text-dark"><i class="fa fa-language"></i> Language: <span class="text-muted">English</span></p>
+                      <p class="small my-1 card-text text-info"><i class="fa fa-calendar"></i> Release Date: <span class="text-muted">YYYY-MM-DD</span></p>
+                      <p class="small my-1 card-text text-danger"><i class="fa fa-heart text-danger"></i> Likes: <span class="text-muted">1.2k</span></p>
+                      <p class="small my-1 card-text text-warning"><i class="fa fa-star"></i> Rating: <span class="text-muted">8.0</span></p>
+                      <div class="d-flex flex-wrap my-2">
+                          <button class="btn btn-sm btn-outline-success rounded m-1" data-time="09.30 AM">09.30 <span class="small">AM</span></button>
+                          <button class="btn btn-sm btn-outline-success rounded m-1" data-time="01.30 PM">01.30 <span class="small">PM</span></button>
+                          <button class="btn btn-sm btn-outline-success rounded m-1" data-time="06.00 PM">06.00 <span class="small">PM</span></button>
+                          <button class="btn btn-sm btn-outline-success rounded m-1" data-time="09.00 PM">09.00 <span class="small">PM</span></button>
+                      </div>
+                      <button class="btn btn-outline-info btn-sm w-100 mt-2 confirm-selection" style="display: none;">Confirm Selection</button>
+                  </div>
+              </div>
+            </div>
+        </div>
+     </div>
+    
+     <div class="col-md-6 my-1">
+      <div class="card mb-3 multiplex-card">
+          <div class="row no-gutters">
+              <div class="col-md-4">
+                  <img src="https://wallpapercave.com/wp/wp10314725.jpg" class="movie-card-img" alt="Movie Poster">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Movie Title</h5>
+                    <p class="small card-subtitle text-primary"><i class="fa fa-tv"></i> Screen no : <span class="text-muted">01</span></p>
+                    <p class="small my-1 card-text text-dark"><i class="fa fa-language"></i> Language: <span class="text-muted">English</span></p>
+                    <p class="small my-1 card-text text-info"><i class="fa fa-calendar"></i> Release Date: <span class="text-muted">YYYY-MM-DD</span></p>
+                    <p class="small my-1 card-text text-danger"><i class="fa fa-heart text-danger"></i> Likes: <span class="text-muted">1.2k</span></p>
+                    <p class="small my-1 card-text text-warning"><i class="fa fa-star"></i> Rating: <span class="text-muted">8.0</span></p>
+                    <div class="d-flex flex-wrap my-2">
+                        <button class="btn btn-sm btn-outline-success rounded m-1" data-time="09.30 AM">09.30 <span class="small">AM</span></button>
+                        <button class="btn btn-sm btn-outline-success rounded m-1" data-time="01.30 PM">01.30 <span class="small">PM</span></button>
+                        <button class="btn btn-sm btn-outline-success rounded m-1" data-time="06.00 PM">06.00 <span class="small">PM</span></button>
+                        <button class="btn btn-sm btn-outline-success rounded m-1" data-time="09.00 PM">09.00 <span class="small">PM</span></button>
+                    </div>
+                    <button class="btn btn-outline-info btn-sm w-100 mt-2 confirm-selection" style="display: none;">Confirm Selection</button>
+                </div>
+            </div>
+          </div>
+      </div>
+   </div>
+
+   <div class="col-md-6 my-1">
+    <div class="card mb-3 multiplex-card">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="https://wallpapercave.com/wp/wp10314725.jpg" class="movie-card-img" alt="Movie Poster">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                  <h5 class="card-title">Movie Title</h5>
+                  <p class="small card-subtitle text-primary"><i class="fa fa-tv"></i> Screen no : <span class="text-muted">01</span></p>
+                  <p class="small my-1 card-text text-dark"><i class="fa fa-language"></i> Language: <span class="text-muted">English</span></p>
+                  <p class="small my-1 card-text text-info"><i class="fa fa-calendar"></i> Release Date: <span class="text-muted">YYYY-MM-DD</span></p>
+                  <p class="small my-1 card-text text-danger"><i class="fa fa-heart text-danger"></i> Likes: <span class="text-muted">1.2k</span></p>
+                  <p class="small my-1 card-text text-warning"><i class="fa fa-star"></i> Rating: <span class="text-muted">8.0</span></p>
+                  <div class="d-flex flex-wrap my-2">
+                      <button class="btn btn-sm btn-outline-success rounded m-1" data-time="09.30 AM">09.30 <span class="small">AM</span></button>
+                      <button class="btn btn-sm btn-outline-success rounded m-1" data-time="01.30 PM">01.30 <span class="small">PM</span></button>
+                      <button class="btn btn-sm btn-outline-success rounded m-1" data-time="06.00 PM">06.00 <span class="small">PM</span></button>
+                      <button class="btn btn-sm btn-outline-success rounded m-1" data-time="09.00 PM">09.00 <span class="small">PM</span></button>
+                  </div>
+                  <button class="btn btn-outline-info btn-sm w-100 mt-2 confirm-selection" style="display: none;">Confirm Selection</button>
+              </div>
+          </div>
+        </div>
+    </div>
+ </div>
+
+ <div class="col-md-6 my-1">
+        <div class="card mb-3 multiplex-card">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="https://wallpapercave.com/wp/wp10314725.jpg" class="movie-card-img" alt="Movie Poster">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                      <h5 class="card-title">Movie Title</h5>
+                      <p class="small card-subtitle text-primary"><i class="fa fa-tv"></i> Screen no : <span class="text-muted">01</span></p>
+                      <p class="small my-1 card-text text-dark"><i class="fa fa-language"></i> Language: <span class="text-muted">English</span></p>
+                      <p class="small my-1 card-text text-info"><i class="fa fa-calendar"></i> Release Date: <span class="text-muted">YYYY-MM-DD</span></p>
+                      <p class="small my-1 card-text text-danger"><i class="fa fa-heart text-danger"></i> Likes: <span class="text-muted">1.2k</span></p>
+                      <p class="small my-1 card-text text-warning"><i class="fa fa-star"></i> Rating: <span class="text-muted">8.0</span></p>
+                      <div class="d-flex flex-wrap my-2">
+                          <button class="btn btn-sm btn-outline-success rounded m-1" data-time="09.30 AM">09.30 <span class="small">AM</span></button>
+                          <button class="btn btn-sm btn-outline-success rounded m-1" data-time="01.30 PM">01.30 <span class="small">PM</span></button>
+                          <button class="btn btn-sm btn-outline-success rounded m-1" data-time="06.00 PM">06.00 <span class="small">PM</span></button>
+                          <button class="btn btn-sm btn-outline-success rounded m-1" data-time="09.00 PM">09.00 <span class="small">PM</span></button>
+                      </div>
+                      <button class="btn btn-outline-info btn-sm w-100 mt-2 confirm-selection" style="display: none;">Confirm Selection</button>
+                  </div>
+              </div>
+            </div>
+        </div>
+     </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+<div class="modal fade" id="selectionModal" tabindex="-1" role="dialog" aria-labelledby="selectionModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="selectionModalLabel"><i class="fa fa-ticket"></i> Hurrah..! Book your seats now.</h5>
+          <a href="#" class="close text-white" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </a>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <!-- Left Side: Multiplex and Area -->
+            <div class="col-md-6 col-12">
+              <div class="d-flex align-items-center justify-content-center justify-content-md-start">
+                <i class="fa fa-film fa-2x text-danger mr-3"></i>
+                <div>
+                  <p class="mb-1 font-weight-bold text-dark" id="selectedMultiplexName">Not Selected</p>
+                  <p class="mb-1 text-secondary small" id="selectedArea"><i class="fa fa-map-marker text-danger"></i>Not Selected</p>
+                </div>
+              </div>
+            </div>
+            <!-- Right Side: Date and Show Time -->
+            <div class="col-md-6 col-12">
+              <div class="d-flex align-items-center justify-content-center justify-content-md-end">
+                <i class="fa fa-calendar fa-2x text-success mr-3"></i>
+                <div>
+                  <p class="mb-1 font-weight-bold text-dark" id="selectedDate">Date: <span class="text-muted">Not Selected</span></p>
+                  <p class="mb-1 text-secondary" id="selectedTime"><i class="fa fa-clock-o text-primary"></i> Show Time: <span class="text-muted">Not Selected</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <!-- Seat Matrix -->
+          <div class="screen-bar text-center mb-3 mx-auto rounded">
+            <span class="screen-label">SCREEN</span>
+          </div>
+          <div class="seat-grid">
+            <div class="seat-row" data-price="100">
+              <div class="seat-label">A</div>
+              <div class="seat" data-seat-number="1">1</div>
+              <div class="seat" data-seat-number="2">2</div>
+              <div class="seat" data-seat-number="3">3</div>
+              <div class="seat" data-seat-number="4">4</div>
+              <div class="seat" data-seat-number="5">5</div>
+              <div class="seat" data-seat-number="6">6</div>
+              <div class="seat" data-seat-number="7">7</div>
+              <div class="seat" data-seat-number="8">8</div>
+              <div class="seat" data-seat-number="9">9</div>
+              <div class="seat" data-seat-number="10">10</div>
+            </div>
+  
+            <div class="seat-row" data-price="100">
+              <div class="seat-label">B</div>
+              <div class="seat" data-seat-number="1">1</div>
+              <div class="seat" data-seat-number="2">2</div>
+              <div class="seat" data-seat-number="3">3</div>
+              <div class="seat" data-seat-number="4">4</div>
+              <div class="seat" data-seat-number="5">5</div>
+              <div class="seat" data-seat-number="6">6</div>
+              <div class="seat" data-seat-number="7">7</div>
+              <div class="seat" data-seat-number="8">8</div>
+              <div class="seat" data-seat-number="9">9</div>
+              <div class="seat" data-seat-number="10">10</div>
+            </div>
+  
+            <div class="seat-row" data-price="100">
+              <div class="seat-label">C</div>
+              <div class="seat" data-seat-number="1">1</div>
+              <div class="seat" data-seat-number="2">2</div>
+              <div class="seat" data-seat-number="3">3</div>
+              <div class="seat" data-seat-number="4">4</div>
+              <div class="seat" data-seat-number="5">5</div>
+              <div class="seat" data-seat-number="6">6</div>
+              <div class="seat" data-seat-number="7">7</div>
+              <div class="seat" data-seat-number="8">8</div>
+              <div class="seat" data-seat-number="9">9</div>
+              <div class="seat" data-seat-number="10">10</div>
+            </div>
+  
+            <div class="seat-row" data-price="150">
+              <div class="seat-label">D</div>
+              <div class="seat" data-seat-number="1">1</div>
+              <div class="seat" data-seat-number="2">2</div>
+              <div class="seat" data-seat-number="3">3</div>
+              <div class="seat" data-seat-number="4">4</div>
+              <div class="seat" data-seat-number="5">5</div>
+              <div class="seat" data-seat-number="6">6</div>
+              <div class="seat" data-seat-number="7">7</div>
+              <div class="seat" data-seat-number="8">8</div>
+              <div class="seat" data-seat-number="9">9</div>
+              <div class="seat" data-seat-number="10">10</div>
+            </div>
+  
+            <div class="seat-row" data-price="150">
+              <div class="seat-label">E</div>
+              <div class="seat" data-seat-number="1">1</div>
+              <div class="seat" data-seat-number="2">2</div>
+              <div class="seat" data-seat-number="3">3</div>
+              <div class="seat" data-seat-number="4">4</div>
+              <div class="seat" data-seat-number="5">5</div>
+              <div class="seat" data-seat-number="6">6</div>
+              <div class="seat" data-seat-number="7">7</div>
+              <div class="seat" data-seat-number="8">8</div>
+              <div class="seat" data-seat-number="9">9</div>
+              <div class="seat" data-seat-number="10">10</div>
+            </div>
+  
+            <div class="seat-row" data-price="150">
+              <div class="seat-label">F</div>
+              <div class="seat" data-seat-number="1">1</div>
+              <div class="seat" data-seat-number="2">2</div>
+              <div class="seat" data-seat-number="3">3</div>
+              <div class="seat" data-seat-number="4">4</div>
+              <div class="seat" data-seat-number="5">5</div>
+              <div class="seat" data-seat-number="6">6</div>
+              <div class="seat" data-seat-number="7">7</div>
+              <div class="seat" data-seat-number="8">8</div>
+              <div class="seat" data-seat-number="9">9</div>
+              <div class="seat" data-seat-number="10">10</div>
+            </div>
+  
+            <div class="seat-row" data-price="200">
+              <div class="seat-label">G</div>
+              <div class="seat" data-seat-number="1">1</div>
+              <div class="seat" data-seat-number="2">2</div>
+              <div class="seat" data-seat-number="3">3</div>
+              <div class="seat" data-seat-number="4">4</div>
+              <div class="seat" data-seat-number="5">5</div>
+              <div class="seat" data-seat-number="6">6</div>
+              <div class="seat" data-seat-number="7">7</div>
+              <div class="seat" data-seat-number="8">8</div>
+              <div class="seat" data-seat-number="9">9</div>
+              <div class="seat" data-seat-number="10">10</div>
+            </div>
+            <div class="seat-row" data-price="200">
+              <div class="seat-label">H</div>
+              <div class="seat" data-seat-number="1">1</div>
+              <div class="seat" data-seat-number="2">2</div>
+              <div class="seat" data-seat-number="3">3</div>
+              <div class="seat" data-seat-number="4">4</div>
+              <div class="seat" data-seat-number="5">5</div>
+              <div class="seat" data-seat-number="6">6</div>
+              <div class="seat" data-seat-number="7">7</div>
+              <div class="seat" data-seat-number="8">8</div>
+              <div class="seat" data-seat-number="9">9</div>
+              <div class="seat" data-seat-number="10">10</div>
+            </div>
+          </div>
+          <div class="seat-details mt-4 row">
+            <!-- Left Side: Ticket Details -->
+            <div class="col-sm-4 text-center text-sm-left">
+              <p>Selected Seat(s): <span id="selectedSeats" class="text-secondary small">None</span></p>
+              <p>Total Price: <span id="totalPrice" class="text-secondary small">0</span> <span class="small text-secondary">INR</span></p>
+            </div>
+            <!-- Right Side: Price Labels -->
+            <div class="col-sm-8 d-flex align-items-center justify-content-center justify-content-md-end">
+              <div class="d-flex align-items-center mb-2">
+                <div class="seat" style="background-color: #c5cfdd;"></div>
+                <p class="mr-2 ml-1 mb-0 text-secondary mytext">Silver (Rs.100)</p>
+              </div>
+              <div class="d-flex align-items-center mb-2">
+                <div class="seat" style="background-color: #ecd86b;"></div>
+                <p class="mr-2 mb-0 ml-1 text-secondary mytext">Gold (Rs.150)</p>
+              </div>
+              <div class="d-flex align-items-center mb-2">
+                <div class="seat" style="background-color: #95cddf;"></div>
+                <p class="mb-0 ml-1 text-secondary mytext">Platinum (Rs.200)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger btn-sm rounded" data-dismiss="modal">Close</button>
+          <button class="btn btn-outline-success btn-sm rounded" id="checkoutButton" disabled>Checkout <i class="fa fa-sign-out"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Footer -->
+<footer class="footer text-center">
+  <div class="container">
+    <p class="mb-1"><strong>Movie<span class="text-warning">Book</span></strong> &copy; 2024</p>
+    <div class="social-icons mb-3">
+      <a href="https://twitter.com" target="_blank" class="mr-3"><i class="fa fa-twitter fa-lg"></i></a>
+      <a href="https://instagram.com" target="_blank" class="mr-3"><i class="fa fa-instagram fa-lg"></i></a>
+      <a href="https://youtube.com" target="_blank"><i class="fa fa-youtube fa-lg"></i></a>
+    </div>
+    <div>
+      <a href="#" class="text-white">About Us</a> | 
+      <a href="#" class="text-white">Contact</a> | 
+      <a href="#" class="text-white">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Function to format date in YYYY-MM-DD format
+    function formatDate(date) {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    }
+
+    // Function to generate buttons for the next 5 days
+    function generateDateButtons() {
+        const dateContainer = document.querySelector('.row > .col-md-8 .d-flex');
+        const today = new Date();
+        
+        // Clear existing buttons
+        dateContainer.innerHTML = '';
+
+        for (let i = 0; i < 5; i++) {
+            const currentDate = new Date(today);
+            currentDate.setDate(today.getDate() + i);
+            
+            const formattedDate = formatDate(currentDate);
+            const displayDate = `${currentDate.getDate()} ${currentDate.toLocaleString('default', { month: 'short' })}`;
+
+            const button = document.createElement('button');
+            button.className = 'btn btn-outline-primary m-1';
+            button.id = `date-${formattedDate}`;
+            button.dataset.date = formattedDate;
+            button.textContent = displayDate;
+            
+            dateContainer.appendChild(button);
+        }
+    }
+
+    generateDateButtons();
+});
+
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Example seat string for testing
+    const seatString = "000101010000000000010101000000000000000000000000"; 
+
+    // Elements in the modal
+    const seatMatrixContainer = document.querySelector(".seat-grid");
+
+    // Function to generate the seat matrix
+    function generateSeatMatrix(seatString) {
+        const seatRows = [
+            { label: 'A', count: 10, price: 100 },
+            { label: 'B', count: 10, price: 100 },
+            { label: 'C', count: 10, price: 100 },
+            { label: 'D', count: 10, price: 150 },
+            { label: 'E', count: 10, price: 150 },
+            { label: 'F', count: 10, price: 150 },
+            { label: 'G', count: 10, price: 200 },
+            { label: 'H', count: 10, price: 200 }
+        ];
+
+        let seatStringIndex = 0; // Track position in seatString
+        let matrixHTML = '';
+
+        seatRows.forEach(row => {
+            matrixHTML += `<div class="seat-row" data-price="${row.price}"><div class="seat-label">${row.label}</div>`;
+            
+            for (let i = 0; i < row.count; i++) {
+                const seatStatus = seatString[seatStringIndex++];
+                const seatClass = seatStatus === '1' ? 'occupied' : 'free';
+                matrixHTML += `<div class="seat ${seatClass}" data-seat-number="${row.label}${i + 1}">${i + 1}</div>`;
+            }
+
+            matrixHTML += '</div>';
+        });
+
+        seatMatrixContainer.innerHTML = matrixHTML;
+    }
+
+    // Generate seat matrix on modal load
+    $('#selectionModal').on('show.bs.modal', () => {
+        generateSeatMatrix(seatString);
+    });
+
+    // Event listener for seat selection
+    seatMatrixContainer.addEventListener('click', (event) => {
+        if (event.target.classList.contains('seat') && event.target.classList.contains('free')) {
+            event.target.classList.toggle('selected');
+            updateSeatSelection();
+        }
+    });
+
+    function updateSeatSelection() {
+        const selectedSeats = document.querySelectorAll('.seat.selected');
+        const selectedSeatsArray = Array.from(selectedSeats).map(seat => seat.getAttribute('data-seat-number'));
+        const totalPrice = selectedSeats.length * 100; // Update according to your logic
+        document.getElementById('selectedSeats').textContent = selectedSeatsArray.join(', ') || 'None';
+        document.getElementById('totalPrice').textContent = totalPrice;
+        document.getElementById('checkoutButton').disabled = selectedSeats.length === 0;
+    }
+});
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    let selectedDate = null;
+    let selectedTime = null;
+    let currentCard = null;
+    
+    // Set a default date on page load
+    const defaultDate = document.querySelector('#date-2024-08-15');
+    if (defaultDate) {
+        selectedDate = defaultDate.getAttribute('data-date');
+        defaultDate.classList.add('active');
+    }
+    
+    // Handle date selection
+    document.querySelectorAll('.btn[data-date]').forEach(button => {
+        button.addEventListener('click', function () {
+            document.querySelectorAll('.btn[data-date]').forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            selectedDate = this.getAttribute('data-date');
+        });
+    });
+
+    // Handle time selection
+    document.querySelectorAll('.multiplex-card button[data-time]').forEach(button => {
+        button.addEventListener('click', function () {
+            // Reset previously selected card's time
+            if (currentCard) {
+                currentCard.querySelectorAll('button[data-time]').forEach(btn => btn.classList.remove('active'));
+                currentCard.querySelector('.confirm-selection').style.display = 'none';
+            }
+
+            // Select new card
+            const card = this.closest('.multiplex-card');
+            const confirmButton = card.querySelector('.confirm-selection');
+            
+            if (this.classList.contains('active')) {
+                this.classList.remove('active');
+                selectedTime = null;
+                confirmButton.style.display = 'none';
+                currentCard = null;
+            } else {
+                this.classList.add('active');
+                selectedTime = this.getAttribute('data-time');
+                confirmButton.style.display = 'block';
+                currentCard = card;
+            }
+        });
+    });
+    
+    // Handle confirm selection
+    document.querySelectorAll('.confirm-selection').forEach(button => {
+        button.addEventListener('click', function () {
+            if (!selectedDate) {
+                alert('Please select a date.');
+                return;
+            }
+            
+            if (selectedTime && currentCard) {
+                const multiplexName = currentCard.querySelector('.card-title').textContent;
+                const area = currentCard.querySelector('.card-subtitle').textContent;
+
+                document.getElementById('selectedMultiplexName').textContent = multiplexName;
+                document.getElementById('selectedArea').textContent = area;
+                document.getElementById('selectedDate').textContent = 'Date: ' + selectedDate;
+                document.getElementById('selectedTime').textContent = 'Show Time: ' + selectedTime;
+                $('#selectionModal').modal('show');
+            } else {
+                alert('Please select a show time.');
+            }
+        });
+    });
+
+    // Handle seat selection
+    document.querySelectorAll('.seat').forEach(seat => {
+        seat.addEventListener('click', function () {
+            if (!this.classList.contains('occupied')) {
+                this.classList.toggle('selected');
+                updateSeatSelection();
+            }
+        });
+    });
+
+    // Function to update seat selection
+    function updateSeatSelection() {
+        const selectedSeats = document.querySelectorAll('.seat.selected');
+        let seatCount = selectedSeats.length;
+        let totalPrice = 0;
+        let seatNumbers = [];
+        
+        selectedSeats.forEach(seat => {
+            const row = seat.parentElement;
+            const price = parseInt(row.getAttribute('data-price'));
+            totalPrice += price;
+            seatNumbers.push(`${row.querySelector('.seat-label').textContent}${seat.getAttribute('data-seat-number')}`);
+        });
+        
+        document.getElementById('selectedSeats').textContent = seatNumbers.join(', ');
+        document.getElementById('totalPrice').textContent = totalPrice;
+
+        // Enable/disable the checkout button based on seat selection
+        const checkoutButton = document.getElementById('checkoutButton');
+        if (checkoutButton) {
+            checkoutButton.disabled = seatCount === 0;
+        }
+    }
+
+    // Reset seats and price when the modal is closed
+    $('#selectionModal').on('hidden.bs.modal', function () {
+        document.querySelectorAll('.seat.selected').forEach(seat => {
+            seat.classList.remove('selected');
+        });
+        document.getElementById('selectedSeats').textContent = 'None';
+        document.getElementById('totalPrice').textContent = '0';
+        const checkoutButton = document.getElementById('checkoutButton');
+        if (checkoutButton) {
+            checkoutButton.disabled = true;
+        }
+
+        // Reset active time selection and hide confirm button
+        if (currentCard) {
+            currentCard.querySelectorAll('button[data-time]').forEach(btn => btn.classList.remove('active'));
+            currentCard.querySelector('.confirm-selection').style.display = 'none';
+        }
+        selectedTime = null;
+        currentCard = null;
+    });
+});
+
+</script>
+</body>
+</html>

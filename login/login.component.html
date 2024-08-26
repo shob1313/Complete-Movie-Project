@@ -1,0 +1,62 @@
+<div class="card-body">
+<div class="card">
+    <div class="inner-box" id="card"  [ngClass]="{'rotate-register': isRegisterMode, 'rotate-login': !isRegisterMode}">
+      <div class="card-front">
+        <form>
+          <h2>Create Account</h2>
+          <input type="text" placeholder="Name" required />
+          <input type="email" placeholder="Email" required />
+          <input type="password" placeholder="Password" required />
+          <select name="security_question" id="security_question" required>
+            <option value="" disabled selected>Select a security question</option>
+            <option value="first_pet">What is the name of your first pet?</option>
+            <option value="first_car">What was the make and model of your first car?</option>
+            <option value="mothers_maiden_name">What is your mother's maiden name?</option>
+            <option value="elementary_school">What was the name of your elementary school?</option>
+            <option value="first_employer">What was the name of your first employer?</option>
+            <option value="favorite_book">What is your favorite book?</option>
+            <option value="childhood_nickname">What was your childhood nickname?</option>
+            <option value="birth_city">What is the name of the city where you were born?</option>
+            <option value="dream_job">What was your dream job as a child?</option>
+            <option value="favorite_movie">What is your favorite movie?</option>
+          </select>
+          <input type="text" placeholder="Security Answer" required />
+          <button type="submit">Sign Up</button>
+          <p>Already Have an Account? <span (click)="toggleMode()">Sign In</span></p>
+        </form>
+      </div>
+      <div class="card-back">
+        <form>
+          <h2>Sign in</h2>
+          <div class="toggle_password">
+            <ng-container *ngIf="!isForgotPassword; else forgotPasswordTemplate">
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <a href="#" id="toggle_link" (click)="toggleForgotPassword()">Forgot your password?</a>
+              </ng-container>
+              <ng-template #forgotPasswordTemplate>
+                <select name="security_question" id="security_question" required>
+                  <option value="" disabled selected>Select a security question</option>
+                  <option value="first_pet">What is the name of your first pet?</option>
+                  <option value="first_car">What was the make and model of your first car?</option>
+                  <option value="mothers_maiden_name">What is your mother's maiden name?</option>
+                  <option value="elementary_school">What was the name of your elementary school?</option>
+                  <option value="first_employer">What was the name of your first employer?</option>
+                  <option value="favorite_book">What is your favorite book?</option>
+                  <option value="childhood_nickname">What was your childhood nickname?</option>
+                  <option value="birth_city">What is the name of the city where you were born?</option>
+                  <option value="dream_job">What was your dream job as a child?</option>
+                  <option value="favorite_movie">What is your favorite movie?</option>
+                </select>
+                <input type="text" placeholder="Security Answer" required />
+                <a href="#" id="toggle_link" (click)="toggleForgotPassword()">Enter password?</a>
+              </ng-template>
+    
+          </div>
+          <button>Sign In</button>
+          <p>Don't Have Account? <span (click)="toggleMode()">Sign Up</span></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>  

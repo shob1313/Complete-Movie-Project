@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MovieBook</title>
+  <link rel="icon" href="https://www.freeiconspng.com/thumbs/hd-tickets/download-ticket-ticket-free-entertainment-icon-orange-ticket-design-0.png">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .table {
+      border-radius: 15px !important; 
+      overflow: hidden; 
+    }
+    .table th, .table td {
+      vertical-align: middle;
+    }
+  </style>
+  <!-- DataTables CSS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+
+</head>
+<body>
+
+<!-- Header -->
+<header class="bg-dark text-white py-2 sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-dark ">
+    <a class="navbar-brand" href="index.html">Movie<span class="text-warning">Book</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <form class="form-inline my-2 my-lg-0 ml-auto">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search movies..." aria-label="Search">
+        <select class="custom-select mr-sm-2 my-2 my-sm-0">
+          <option selected>Select City</option>
+          <option value="nyc" selected>New York</option>
+          <option value="la">Los Angeles</option>
+          <option value="ch">Chicago</option>
+        </select>
+        <div class="dropdown">
+          <button class="btn btn-outline-secondary text-white dropdown-toggle" type="button" id="userMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="User" class="rounded-circle border mr-2"> John Doe
+          </button>
+          <div class="dropdown-menu" aria-labelledby="userMenuButton">
+            <a class="dropdown-item text-info" href="profile.html">Profile</a>
+            <a class="dropdown-item text-info" href="dashboard.html">Dashboard</a>
+            <a class="dropdown-item text-danger" href="#">Sign Out</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </nav>
+</header>
+
+
+<!-- Modal Structure -->
+<div class="modal fade" id="manageMultiplexModal" tabindex="-1" role="dialog" aria-labelledby="manageMultiplexModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="manageMultiplexModalLabel">Manage Multiplex</h5>
+        <a href="#" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </a>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-row">
+            <div class="form-group px-sm-4 my-1 col-md-6">
+              <label for="name" class="font-weight-bold text-secondary">Name</label>
+              <input type="text" class="form-control form-control-sm" id="name" placeholder="Enter theatre name" value="Cinema Palace">
+            </div>
+            <div class="form-group px-sm-4 my-1 col-md-6">
+              <label for="area" class="font-weight-bold text-secondary">Area</label>
+              <input type="text" class="form-control form-control-sm" id="area" placeholder="Enter area" value="Downtown">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group px-sm-4 my-1 col-md-6">
+              <label for="location" class="font-weight-bold text-secondary">Location</label>
+              <input type="text" class="form-control form-control-sm" id="location" placeholder="Enter location" value="123 Main St">
+            </div>
+            <div class="form-group px-sm-4 my-1 col-md-6">
+              <label for="ratings" class="font-weight-bold text-secondary">Ratings</label>
+              <input type="number" step="0.1" min="0" max="5" class="form-control form-control-sm" id="ratings" placeholder="Enter ratings" value="4.5">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group px-sm-4 my-1 col-md-6">
+              <label for="screens" class="font-weight-bold text-secondary">Screens</label>
+              <input type="number" class="form-control form-control-sm" id="screens" placeholder="Enter number of screens" value="5">
+            </div>
+            <div class="form-group px-sm-4 my-1 col-md-6">
+              <label for="total-seats" class="font-weight-bold text-secondary">Total Seats</label>
+              <input type="number" class="form-control form-control-sm" id="total-seats" placeholder="Enter total seats" value="500">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group px-sm-4 my-1 col-md-6">
+              <label for="user-id" class="font-weight-bold text-secondary">Admin User ID</label>
+              <input type="number" class="form-control form-control-sm" id="user-id" placeholder="Enter admin user ID" value="1">
+            </div>
+            <div class="form-group px-sm-4 my-1 col-md-6">
+              <label for="image" class="font-weight-bold text-secondary">Image</label>
+              <input type="text" class="form-control form-control-sm" id="image" placeholder="Enter Image CDN">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-outline-primary btn-sm">Add Multiplex</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<section class="container">
+  <div class="card my-5 shadow-lg border-light no-hover-effect">
+  <div class="card-body mx-4">
+    <div class="d-sm-flex align-items-center justify-content-center my-4 my-lg-0 mt-lg-2 text-center">
+      <h4 class="text-primary my-2 mr-sm-3">Multiplex List</h4>
+      <button class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#manageMultiplexModal">Add Multiplex</button>
+    </div>
+      <div class="table-responsive mx-3">
+        <table id="Table" class="table table-md table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th>Name</th>
+              <th>Area</th>
+              <th>Location</th>
+              <th>Ratings</th>
+              <th>Screens</th>
+              <th>Total Seats</th>
+              <th>Admin</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cinema Palace</td>
+              <td>Downtown</td>
+              <td>123 Main St</td>
+              <td>4.5</td>
+              <td>5</td>
+              <td>500</td>
+              <td>1</td>
+              <td>
+                <button class="btn btn-outline-primary btn-sm mr-1 rounded" title="Update" data-toggle="modal" data-target="#manageMultiplexModal">
+                  <i class="fa fa-edit"></i>
+                </button>
+                <button class="btn btn-outline-danger btn-sm rounded" title="Delete">
+                  <i class="fa fa-trash-o"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Modal Structure -->
+<div class="modal fade" id="manageMovieModal" tabindex="-1" role="dialog" aria-labelledby="manageMovieModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="manageMovieModalLabel">Manage Movie</h5>
+        <a href="#" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </a>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-row">
+            <div class="form-group px-sm-4 my-1 col-md-6">
+              <label for="title" class="font-weight-bold text-secondary">Title</label>
+              <input type="text" class="form-control form-control-sm" id="title" placeholder="Enter movie title" value="Tholi Prema">
+            </div>
+            <div class="form-group px-sm-4 my-1 col-md-6">
+              <label for="genre" class="font-weight-bold text-secondary">Genre</label>
+              <input type="text" class="form-control form-control-sm" id="genre" placeholder="Enter genre" value="Romance">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group px-sm-4 my-1 col-md-6">
+              <label for="duration" class="font-weight-bold text-secondary">Duration (Mins)</label>
+              <input type="number" class="form-control form-control-sm" id="duration" placeholder="Enter duration" value="120">
+            </div>
+            <div class="form-group px-sm-4 my-1 col-md-6">
+              <label for="release-date" class="font-weight-bold text-secondary">Release Date</label>
+              <input type="date" class="form-control form-control-sm" id="release-date" placeholder="Enter release date" value="2024-08-15">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group px-sm-4 my-1 col-md-6">
+              <label for="rating" class="font-weight-bold text-secondary">Rating</label>
+              <input type="number" step="0.1" min="0" max="10" class="form-control form-control-sm" id="rating" placeholder="Enter rating" value="8.5">
+            </div>
+            <div class="form-group px-sm-4 my-1 col-md-6">
+              <label for="likes" class="font-weight-bold text-secondary">Likes</label>
+              <input type="number" class="form-control form-control-sm" id="likes" placeholder="Enter number of likes" value="1500">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group px-sm-4 my-1 col-md-6">
+              <label for="description" class="font-weight-bold text-secondary">Description</label>
+              <textarea class="form-control form-control-sm" id="description" rows="1" placeholder="Enter description">A romantic movie about...</textarea>
+            </div>
+            <div class="form-group px-sm-4 col-md-6">
+              <label for="casting" class="font-weight-bold text-secondary">Casting</label>
+              <input type="text" class="form-control form-control-sm" id="casting" placeholder="Enter casting" value="John Doe, Jane Doe">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group px-sm-4 my-1 col-md-6">
+              <label for="trailer" class="font-weight-bold text-secondary">Trailer</label>
+              <input type="text" class="form-control form-control-sm" id="trailer" placeholder="Enter trailer URL" value="https://youtube.com/trailer">
+            </div>
+            <div class="form-group px-sm-4 my-1 col-md-6">
+              <label for="language" class="font-weight-bold text-secondary">Language</label>
+              <input type="text" class="form-control form-control-sm" id="language" placeholder="Enter language" value="English">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group px-sm-4 my-1 col-md-12">
+              <label for="image" class="font-weight-bold text-secondary">Image</label>
+              <input type="text" class="form-control form-control-sm" id="image" placeholder="Enter image URL" value="https://example.com/image.jpg">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-outline-primary btn-sm">Add Movie</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<section class="container">
+  <div class="card my-5 shadow-lg border-light no-hover-effect">
+  <div class="card-body mx-4">
+    <div class="d-sm-flex align-items-center justify-content-center text-center my-4 my-lg-0 mt-lg-2 ">
+      <h4 class="text-primary my-2 mr-sm-3">Movie List</h4>
+      <button class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#manageMovieModal">Add Movie</button>
+    </div>
+      <div class="table-responsive mx-3">
+        <table id="Table2" class="table table-md table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th>Title</th>
+              <th>Genre</th>
+              <th>Duration</th>
+              <th>Release Date</th>
+              <th>Rating</th>
+              <th>Likes</th>
+              <th>Casting</th>
+              <th>Language</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tholi Prema</td>
+              <td>Romance</td>
+              <td>120 minutes</td>
+              <td>15 Aug, 2024</td>
+              <td>8.5</td>
+              <td>1500</td>
+              <td>John Doe, Jane Doe</td>
+              <td>English</td>
+              <td>
+                <button class="btn btn-outline-primary btn-sm mr-1 rounded" title="Update" data-toggle="modal" data-target="#manageMovieModal">
+                  <i class="fa fa-edit"></i>
+                </button>
+                <button class="btn btn-outline-danger btn-sm rounded" title="Delete">
+                  <i class="fa fa-trash-o"></i>
+                </button>
+              </td>
+            </tr>
+            <!-- Additional rows can be added here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Modal Structure -->
+<div class="modal fade" id="linkMovieModal" tabindex="-1" role="dialog" aria-labelledby="linkMovieModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="linkMovieModalLabel">Link Movie to Multiplex</h5>
+        <a href="#" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </a>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="theatre-id" class="font-weight-bold text-secondary">Theatre</label>
+              <select id="theatre-id" class="form-control form-control-sm">
+                <option selected>Select Theatre</option>
+                <!-- Options should be populated with available theatres -->
+                <option value="1">Cinema Palace</option>
+                <option value="2">Inox PVR</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="movie-id" class="font-weight-bold text-secondary">Movie</label>
+              <select id="movie-id" class="form-control form-control-sm">
+                <option selected>Select Movie</option>
+                <!-- Options should be populated with available movies -->
+                <option value="1">Tholi Prema</option>
+                <option value="2">Another Movie</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="screen-number" class="font-weight-bold text-secondary">Screen Number</label>
+              <input type="number" class="form-control form-control-sm" id="screen-number" placeholder="Enter screen number" value="1">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="show-date" class="font-weight-bold text-secondary">Show Date</label>
+              <input type="date" class="form-control form-control-sm" id="show-date" placeholder="Enter show date">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="show-code" class="font-weight-bold text-secondary">Show Time(s)</label>
+              <input type="text" class="form-control form-control-sm" id="show-code" placeholder="Enter show time" value="06:30 AM">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="available-seats" class="font-weight-bold text-secondary">Available Seats</label>
+              <input type="number" class="form-control form-control-sm" id="available-seats" placeholder="Enter available seats" value="100">
+            </div>
+          </div>
+          <div class="text-center my-2">
+            <button type="reset" class="btn btn-outline-danger btn-sm mr-1">Reset</button>
+            <button type="submit" class="btn btn-outline-primary btn-sm">Link Movie</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container my-5">
+  <div class="card shadow-lg border-light no-hover-effect">
+    <div class="card-body mx-4">
+      <div class="d-sm-flex align-items-center justify-content-center text-center my-4 my-lg-0 mt-lg-1 ">
+        <h4 class="text-primary my-3 mr-sm-3 text-center">Linked Movies</h4>
+        <button class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#linkMovieModal"> Add</button>  
+      </div>
+      <div class="table-responsive mx-3">
+        <table id="Table3" class="table table-md table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th>Theatre</th>
+              <th>Movie</th>
+              <th>Screen</th>
+              <th>Show Date</th>
+              <th>Show Time(s)</th>
+              <th>Available Seats</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cinema Palace</td>
+              <td>Tholi Prema</td>
+              <td>1</td>
+              <td>2024-08-15</td>
+              <td>06:30 AM</td>
+              <td>100</td>
+              <td>
+                <button class="btn btn-outline-primary btn-sm mr-1 rounded" title="Update" data-toggle="modal" data-target="#linkMovieModal">
+                  <i class="fa fa-edit"></i>
+                </button>
+                <button class="btn btn-outline-danger btn-sm rounded" title="Delete">
+                  <i class="fa fa-trash-o"></i>
+                </button>
+              </td>
+            </tr>
+            <!-- Additional rows can be added here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container my-5">
+  <div class="card shadow-lg border-light no-hover-effect">
+    <div class="card-body mx-4">
+      <div class="d-flex align-items-center justify-content-center">
+        <h4 class="text-primary my-2 mr-3 text-center">Users</h4>
+      </div>
+      <div class="table-responsive mx-3">
+        <table id="Table4" class="table table-md table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th>UserID</th>
+              <th>Full Name</th>
+              <th>Email</th>
+              <th>Phone Number</th>
+              <th>Bookings</th>
+              <th>Registered</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>John Doe</td>
+              <td>john.doe@example.com</td>
+              <td>+1234567890</td>
+              <td>User</td>
+              <td>2024-08-15 10:00:00</td>
+              <td>
+                <button class="btn btn-outline-warning btn-sm mr-1 rounded" title="Block" data-toggle="modal" data-target="#editUserModal">
+                  <i class="fa fa-ban"></i>
+                </button>
+                <button class="btn btn-outline-danger btn-sm rounded" title="Delete">
+                  <i class="fa fa-trash-o"></i>
+                </button>
+              </td>
+            </tr>
+            <!-- Additional rows can be added here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="footer text-center">
+  <div class="container">
+    <p class="mb-1"><strong>Movie<span class="text-warning">Book</span></strong> &copy; 2024</p>
+    <div class="social-icons mb-3">
+      <a href="https://twitter.com" target="_blank" class="mr-3"><i class="fa fa-twitter fa-lg"></i></a>
+      <a href="https://instagram.com" target="_blank" class="mr-3"><i class="fa fa-instagram fa-lg"></i></a>
+      <a href="https://youtube.com" target="_blank"><i class="fa fa-youtube fa-lg"></i></a>
+    </div>
+    <div>
+      <a href="about_us.html" class="text-white">About Us</a> | 
+      <a href="contact_us.html" class="text-white">Contact</a> | 
+      <a href="privacy_policy.html" class="text-white">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#Table,#Table2,#Table3,#Table4').DataTable({
+      paging: true,   
+      searching: true, 
+      ordering: true, 
+      info: true,      
+      lengthChange: true
+    });
+  });
+</script>
+
+</body>
+</html>

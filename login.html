@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Booking</title>
+    <link rel="stylesheet" href="style-2.css" />
+</head>
+<body>
+   
+    <h1 style="margin-top: 35px;">Online Movie Ticket Booking</h1>
+	<div class="card hide-scrollbar ">
+		<div class="inner-box hide-scrollbar" id="card">
+
+	<div class="card-front  hide-scrollbar ">
+		<form action="index.html">
+			<h2>Create Account</h2>
+			
+			<input type="text" placeholder="Name" required />
+			<input type="email" placeholder="Email" required />
+			<input type="text" placeholder="Mobile" required />
+			<input type="password" placeholder="Password" required />
+			<select name="security_question" id="security_question" required>
+				<option value="" disabled selected>Select a security question</option>
+				<option value="first_pet">What is the name of your first pet?</option>
+				<option value="first_car">What was the make and model of your first car?</option>
+				<option value="mothers_maiden_name">What is your mother's maiden name?</option>
+				<option value="elementary_school">What was the name of your elementary school?</option>
+				<option value="first_employer">What was the name of your first employer?</option>
+				<option value="favorite_book">What is your favorite book?</option>
+				<option value="childhood_nickname">What was your childhood nickname?</option>
+				<option value="birth_city">What is the name of the city where you were born?</option>
+				<option value="dream_job">What was your dream job as a child?</option>
+				<option value="favorite_movie">What is your favorite movie?</option>
+			</select>
+			
+			<input type="text" placeholder="Security Answer" required />
+			<button type="submit">Sign Up</button>
+			<p style="margin-bottom: 10px;">Already Have an Account? <span onclick="openRegister()">Sign In</span></p>
+		</form>
+		
+	</div>
+	<div class="card-back">
+		<form action="index.html">
+			<h2>Sign in</h2>
+			<div class="toggle_password">
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<a href="#" id="toggle_link" onclick="toggle1()">Forgot your password?</a>
+			</div>
+			<button>Sign In</button>
+			<p>Don't Have Account? <span onclick="openLogin()">Sign Up</span></p>
+		</form>
+	</div>
+</div>
+</div>
+<script>
+   var card=document.getElementById("card");         
+function openRegister()
+     {
+     card.style.transform = "rotateY(-180deg)";	
+     }	
+function openLogin()
+     {
+         card.style.transform = "rotateY(0deg)";	
+     }	
+	 function toggle1(){
+		
+
+            const formContainer = document.querySelector('.toggle_password');
+
+            // Replace email and password inputs with security question and answer inputs
+            formContainer.innerHTML = `
+                <select name="security_question" id="security_question" required>
+                    <option value="" disabled selected>Select a security question</option>
+                    <option value="first_pet">What is the name of your first pet?</option>
+                    <option value="first_car">What was the make and model of your first car?</option>
+                    <option value="mothers_maiden_name">What is your mother's maiden name?</option>
+                    <option value="elementary_school">What was the name of your elementary school?</option>
+                    <option value="first_employer">What was the name of your first employer?</option>
+                    <option value="favorite_book">What is your favorite book?</option>
+                    <option value="childhood_nickname">What was your childhood nickname?</option>
+                    <option value="birth_city">What is the name of the city where you were born?</option>
+                    <option value="dream_job">What was your dream job as a child?</option>
+                    <option value="favorite_movie">What is your favorite movie?</option>
+                </select>
+                <input type="text" placeholder="Security Answer" required />
+                <a href="#" id="toggle_link" onclick="toggle2()">Enter password?</a>
+            `;
+
+           
+	 }
+	 function toggle2(){
+
+				const formContainer = document.querySelector('.toggle_password');
+                formContainer.innerHTML = `
+                    <input type="email" placeholder="Email" id="email-input" />
+                    <input type="password" placeholder="Password" id="password-input" />
+                    <a href="#" id="toggle_link" onclick="toggle1()">Forgot your password?</a>
+                `;
+        
+	 }
+</script>
+</body>
+</html>

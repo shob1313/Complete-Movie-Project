@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Online Movie Booking</title>
+    <link rel="icon" href="https://www.freeiconspng.com/thumbs/hd-tickets/download-ticket-ticket-free-entertainment-icon-orange-ticket-design-0.png">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles for the About Us page */
+        .about-us {
+            padding: 50px 0;
+            background-color: #f8f9fa;
+        }
+        .about-us h2 {
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        .about-us p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 50px;
+        }
+        .flip-card {
+            background-color: transparent;
+            width: 300px;
+            height: 400px;
+            perspective: 1000px;
+            text-align: center;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .flip-card-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .flip-card-back {
+            background-color: #343a40;
+            color: white;
+            transform: rotateY(180deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .card-name {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="bg-dark text-white py-2 sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <a class="navbar-brand" href="index.html">Movie<span class="text-warning">Book</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <form class="form-inline my-2 my-lg-0 ml-auto">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search movies..." aria-label="Search">
+          <select class="custom-select mr-sm-2 my-2 my-sm-0">
+            <option selected>Select City</option>
+            <option value="nyc" selected>New York</option>
+            <option value="la">Los Angeles</option>
+            <option value="ch">Chicago</option>
+          </select>
+          <div class="dropdown">
+            <button class="btn btn-outline-secondary text-white dropdown-toggle" type="button" id="userMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="User" class="rounded-circle border mr-2"> John Doe
+            </button>
+            <div class="dropdown-menu" aria-labelledby="userMenuButton">
+              <a class="dropdown-item text-info" href="profile.html">Profile</a>
+              <a class="dropdown-item text-info" href="dashboard.html">Dashboard</a>
+              <a class="dropdown-item text-danger" href="#">Sign Out</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+    <!-- About Us Section -->
+    <section class="about-us text-center">
+        <div class="container">
+            <h2>About Our Project</h2>
+            <p class="text-secondary text-center">Welcome to MovieBook! Our project aims to revolutionize the way you experience online movie booking. With a user-friendly interface, seamless ticketing process, and a wide range of features, we are dedicated to providing the best movie-booking experience. Our team is a blend of creativity and technical expertise, working together to bring this project to life.</p>
+            <!-- Card Section -->
+            <div class="card-container">
+                <div class="row">
+                    <!-- Card 1 -->
+                    <div class="flip-card col-12 col-md-4 my-3">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://via.placeholder.com/300x400" alt="Person 1">
+                            </div>
+                            <div class="flip-card-back">
+                                <div>
+                                    <h5>College: XYZ University</h5>
+                                    <p>Skills: Web Development, UI/UX Design</p>
+                                    <p>Contribution: Front-End Development</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-name">Person 1</div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="flip-card col-12 col-md-4 my-3">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://via.placeholder.com/300x400" alt="Person 2">
+                            </div>
+                            <div class="flip-card-back">
+                                <div>
+                                    <h5>College: ABC Institute</h5>
+                                    <p>Skills: Backend Development, Database Management</p>
+                                    <p>Contribution: Backend Development</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-name">Person 2</div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="flip-card col-12 col-md-4 my-3">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://via.placeholder.com/300x400" alt="Person 3">
+                            </div>
+                            <div class="flip-card-back">
+                                <div>
+                                    <h5>College: DEF Academy</h5>
+                                    <p>Skills: Project Management, QA Testing</p>
+                                    <p>Contribution: Quality Assurance</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-name">Person 3</div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer text-center">
+        <div class="container">
+        <p class="mb-1"><strong>Movie<span class="text-warning">Book</span></strong> &copy; 2024</p>
+        <div class="social-icons mb-3">
+            <a href="https://twitter.com" target="_blank" class="mr-3"><i class="fa fa-twitter fa-lg"></i></a>
+            <a href="https://instagram.com" target="_blank" class="mr-3"><i class="fa fa-instagram fa-lg"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="fa fa-youtube fa-lg"></i></a>
+        </div>
+        <div>
+            <a href="about_us.html" class="text-white">About Us</a> | 
+            <a href="contact_us.html" class="text-white">Contact</a> | 
+            <a href="privacy_policy.html" class="text-white">Privacy Policy</a>
+        </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MovieBook</title>
+  <link rel="icon" href="https://www.freeiconspng.com/thumbs/hd-tickets/download-ticket-ticket-free-entertainment-icon-orange-ticket-design-0.png">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .carousel-control-prev,
+    .carousel-control-next {
+    width: 5%;
+    background-color: transparent; /* Make background transparent */
+    opacity: 0; /* Make them fully transparent */
+    transition: opacity 0.3s ease; /* Smooth transition for hover effect */
+    }
+
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+    opacity: 1; /* Make them visible on hover */
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 50%;
+    padding: 20px; /* Increase touch target size */
+    }
+
+    /* Show controls on carousel hover for larger screens */
+    @media (min-width: 768px) {
+    #reviewCarousel:hover .carousel-control-prev,
+    #reviewCarousel:hover .carousel-control-next {
+        opacity: 1;
+    }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="bg-dark text-white py-2 sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-dark ">
+    <a class="navbar-brand" href="index.html">Movie<span class="text-warning">Book</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <form class="form-inline my-2 my-lg-0 ml-auto">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search movies..." aria-label="Search">
+        <select class="custom-select mr-sm-2 my-2 my-sm-0">
+          <option selected>Select City</option>
+          <option value="nyc" selected>New York</option>
+          <option value="la">Los Angeles</option>
+          <option value="ch">Chicago</option>
+        </select>
+        <div class="dropdown">
+          <button class="btn btn-outline-secondary text-white dropdown-toggle" type="button" id="userMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="User" class="rounded-circle border mr-2"> John Doe
+          </button>
+          <div class="dropdown-menu" aria-labelledby="userMenuButton">
+            <a class="dropdown-item text-info" href="profile.html">Profile</a>
+            <a class="dropdown-item text-info" href="dashboard.html">Dashboard</a>
+            <a class="dropdown-item text-danger" href="#">Sign Out</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </nav>
+</header>
+
+<!-- Movie Section -->
+<section class="container my-5">
+  <div class="row">
+    <!-- Movie Card -->
+    <div class="col-md-12 d-flex justify-content-center">
+      <div class="card shadow w-100 no-hover-effect">
+        <div class="row no-gutters">
+          <!-- Movie Poster -->
+          <div class="col-md-4">
+            <img src="https://i.pinimg.com/474x/a3/b8/d1/a3b8d18b139b922e23eadf37507b4c99.jpg" alt="Movie Poster" class="card-img-left movie-poster-img img-fluid">
+          </div>
+          <!-- Movie Details -->
+          <div class="col-md-8">
+              <div class="card-body ml-2">
+                <h2 class="card-title golden-gradient-text mt-sm-2 my-3"><i class="fa fa-film text-warning"></i> Movie Title</h2>
+                <p class="text-muted"><i class="mr-1 fa fa-calendar text-info"></i> <span class="my-text2">Release Year:</span> 2024</p>
+                <p class="text-muted"><i class="mr-1 fa fa-tags text-primary"></i> <span class="my-text2">Genre:</span> Action, Drama, Sci-Fi</p>
+                <p class="text-muted"><i class="mr-1 fa fa-info-circle text-secondary"></i> <span class="my-text2">Description:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum conv t amet, consectetur adipiscing elit. Vestibulum conv allis egestas turpis, a malesuada magna. Vivamus lacinia dolor vel sollicitudin malesuada.</p>
+                <p class="text-muted"><i class="mr-1 fa fa-clock-o text-danger"></i> <span class="my-text2">Duration:</span> 120 min</p>
+                <p class="text-muted"><i class="mr-1 fa fa-user text-success"></i> <span class="my-text2">Casting:</span> Actor, Director, Producers</p>
+                <p class="text-muted"><i class="mr-1 fa fa-star text-warning"></i> <span class="my-text2">Ratings:</span> 8.5/10</p>
+                <div class="d-flex">
+                  <!-- Button to trigger modal -->
+                  <button class="btn btn-outline-danger mr-2" data-toggle="modal" data-target="#trailerModal">
+                    <i class="fa fa-play"></i> Watch Trailer
+                  </button>
+                  <a href="ticket_booking.html" class="btn btn-outline-success">
+                    <i class="fa fa-ticket"></i> Book Tickets
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+    <div class="card my-4 no-hover-effect shadow">
+      <div class="d-flex align-items-center justify-content-center mt-4">
+        <h2 class="golden-gradient-text mr-3">Reviews</h2>
+        <button class="btn btn-outline-warning btn-sm" id="addReviewBtn">Add Your's</button>
+      </div>
+      <div class="card-body">
+        <div id="reviewCarousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <!-- Review 1 -->
+                <div class="col-md-4">
+                  <div class="card h-100 border-primary no-hover-effect shadow">
+                    <div class="card-body">
+                      <div class="d-flex align-items-center mb-2">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="User Image" class="rounded-circle border mr-2" style="width: 40px; height: 40px;">
+                        <div>
+                          <h6 class="mb-0">John Doe</h6>
+                          <small class="text-muted">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star-half-o text-warning"></i>
+                            <i class="fa fa-star-o text-warning"></i>
+                          </small>
+                        </div>
+                      </div>
+                      <p class="mb-0">Great movie with an exciting plot and stunning visuals!</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Review 2 -->
+                <div class="col-md-4">
+                  <div class="card h-100 border-primary no-hover-effect shadow">
+                    <div class="card-body">
+                      <div class="d-flex align-items-center mb-2">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="User Image" class="rounded-circle border mr-2" style="width: 40px; height: 40px;">
+                        <div>
+                          <h6 class="mb-0">Jane Smith</h6>
+                          <small class="text-muted">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star-o text-warning"></i>
+                          </small>
+                        </div>
+                      </div>
+                      <p class="mb-0">Incredible performance by the lead actors. A must-watch!</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Review 3 -->
+                <div class="col-md-4">
+                  <div class="card h-100 border-primary no-hover-effect shadow">
+                    <div class="card-body">
+                      <div class="d-flex align-items-center mb-2">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="User Image" class="rounded-circle border mr-2" style="width: 40px; height: 40px;">
+                        <div>
+                          <h6 class="mb-0">Mike Johnson</h6>
+                          <small class="text-muted">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star-half-o text-warning"></i>
+                          </small>
+                        </div>
+                      </div>
+                      <p class="mb-0">Fantastic storyline with unexpected twists. Highly recommended!</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <!-- Review 4 -->
+                <div class="col-md-4">
+                  <div class="card h-100 border-primary no-hover-effect shadow">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-2">
+                          <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="User Image" class="rounded-circle border mr-2" style="width: 40px; height: 40px;">
+                          <div>
+                            <h6 class="mb-0">Mike Johnson</h6>
+                            <small class="text-muted">
+                              <i class="fa fa-star text-warning"></i>
+                              <i class="fa fa-star text-warning"></i>
+                              <i class="fa fa-star text-warning"></i>
+                              <i class="fa fa-star text-warning"></i>
+                              <i class="fa fa-star-half-o text-warning"></i>
+                            </small>
+                          </div>
+                        </div>
+                        <p class="mb-0">Fantastic storyline with unexpected twists. Highly recommended!</p>
+                      </div>
+                  </div>
+                </div>
+                <!-- Review 5 -->
+                <div class="col-md-4">
+                  <div class="card h-100 border-primary no-hover-effect shadow">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-2">
+                          <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="User Image" class="rounded-circle border mr-2" style="width: 40px; height: 40px;">
+                          <div>
+                            <h6 class="mb-0">Mike Johnson</h6>
+                            <small class="text-muted">
+                              <i class="fa fa-star text-warning"></i>
+                              <i class="fa fa-star text-warning"></i>
+                              <i class="fa fa-star text-warning"></i>
+                              <i class="fa fa-star text-warning"></i>
+                              <i class="fa fa-star-half-o text-warning"></i>
+                            </small>
+                          </div>
+                        </div>
+                        <p class="mb-0">Fantastic storyline with unexpected twists. Highly recommended!</p>
+                      </div>
+                  </div>
+                </div>
+                <!-- Review 6 -->
+                <div class="col-md-4">
+                  <div class="card h-100 border-primary no-hover-effect shadow">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-2">
+                          <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="User Image" class="rounded-circle border mr-2" style="width: 40px; height: 40px;">
+                          <div>
+                            <h6 class="mb-0">Mike Johnson</h6>
+                            <small class="text-muted">
+                              <i class="fa fa-star text-warning"></i>
+                              <i class="fa fa-star text-warning"></i>
+                              <i class="fa fa-star text-warning"></i>
+                              <i class="fa fa-star text-warning"></i>
+                              <i class="fa fa-star-half-o text-warning"></i>
+                            </small>
+                          </div>
+                        </div>
+                        <p class="mb-0">Fantastic storyline with unexpected twists. Highly recommended!</p>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#reviewCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#reviewCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Modal for Adding Review -->
+<div class="modal fade" id="addReviewModal" tabindex="-1" aria-labelledby="addReviewModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addReviewModalLabel">Add Your Review</h5>
+        <a href="#" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </a>
+      </div>
+      <div class="modal-body">
+        <form class="mx-2">
+          <div class="form-group">
+            <label for="rating">Rating (out of 5):</label>
+            <input type="range" class="form-control-range" id="rating" min="0" max="5" step="0.5" value="3">
+            <small id="ratingValue" class="form-text text-muted">Rating: 3</small>
+          </div>
+          <div class="form-group">
+            <label for="comment">Comment:</label>
+            <textarea class="form-control" id="comment" rows="3" placeholder="Write your review here..."></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-outline-primary btn-sm my-2">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Modal -->
+<div class="modal fade" id="trailerModal" tabindex="-1" role="dialog" aria-labelledby="trailerModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <!-- Embed YouTube video -->
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe id="trailerVideo" class="embed-responsive-item" src="https://www.youtube.com/embed/-kFvrsAgp3M?si=X34GbSJv9LTwDzKe" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer text-center">
+  <div class="container">
+    <p class="mb-1"><strong>Movie<span class="text-warning">Book</span></strong> &copy; 2024</p>
+    <div class="social-icons mb-3">
+      <a href="https://twitter.com" target="_blank" class="mr-3"><i class="fa fa-twitter fa-lg"></i></a>
+      <a href="https://instagram.com" target="_blank" class="mr-3"><i class="fa fa-instagram fa-lg"></i></a>
+      <a href="https://youtube.com" target="_blank"><i class="fa fa-youtube fa-lg"></i></a>
+    </div>
+    <div>
+      <a href="#" class="text-white">About Us</a> | 
+      <a href="#" class="text-white">Contact</a> | 
+      <a href="#" class="text-white">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- JavaScript to stop the video when the modal is closed -->
+<script>
+  $('#trailerModal').on('hide.bs.modal', function () {
+    var videoSrc = $('#trailerVideo').attr('src');
+    $('#trailerVideo').attr('src', '');
+    $('#trailerVideo').attr('src', videoSrc);
+  });
+
+  // Show the modal when the "Add Your's" button is clicked
+document.getElementById("addReviewBtn").addEventListener("click", function() {
+    $('#addReviewModal').modal('show');
+});
+
+// Update the displayed rating value when the slider is moved
+document.getElementById("rating").addEventListener("input", function() {
+    document.getElementById("ratingValue").textContent = `Rating: ${this.value}`;
+});
+
+$(document).ready(function() {
+  $('#reviewCarousel').carousel({
+    interval: 5000 // Change slide every 5 seconds
+  });
+
+  // Pause carousel on mouse hover
+  $('.carousel').carousel({
+    pause: "hover"
+  });
+});
+</script>
+</body>
+</html>

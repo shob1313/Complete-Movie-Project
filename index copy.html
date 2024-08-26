@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MovieBook</title>
+  <link rel="icon" href="https://www.freeiconspng.com/thumbs/hd-tickets/download-ticket-ticket-free-entertainment-icon-orange-ticket-design-0.png">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+<!-- Header -->
+<header class="bg-dark text-white py-2 sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-dark ">
+    <a class="navbar-brand" href="index.html">Movie<span class="text-warning">Book</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <form class="form-inline my-2 my-lg-0 ml-auto">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search movies..." aria-label="Search">
+        <select class="custom-select mr-sm-2 my-2 my-sm-0">
+          <option selected>Select City</option>
+          <option value="nyc">New York</option>
+          <option value="la">Los Angeles</option>
+          <option value="ch">Chicago</option>
+        </select>
+        <div class="dropdown">
+          <button class="btn btn-outline-secondary text-white dropdown-toggle" type="button" id="userMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="User" class="rounded-circle border mr-2"> John Doe
+          </button>
+          <div class="dropdown-menu" aria-labelledby="userMenuButton">
+            <a class="dropdown-item text-primary" href="profile.html">Profile</a>
+            <a class="dropdown-item text-danger" href="#">Sign Out</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </nav>
+</header>
+
+<!-- Carousel Section -->
+<section id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2000">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100 carousel-img img-fluid" src="https://www.thechiefstoryteller.com/wp-content/uploads/2018/02/Chief-Storyteller-Blog-2018-0209-black-panther-movie.jpg" alt="First slide">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Featured Movie 1</h5>
+        <p>Description of Featured Movie 1.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100 carousel-img img-fluid" src="https://www.cnet.com/a/img/resize/00114553d2a3eabe604a3ee4153c50c2b0404c0e/hub/2018/04/18/b0d2e71b-f600-41b4-9075-af845f1e6531/p-incredible-hero-avengers-58e3c823.jpg?auto=webp&width=1200" alt="Second slide">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Featured Movie 2</h5>
+        <p>Description of Featured Movie 2.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100 carousel-img img-fluid" src="https://imax.elcinema.com/files/movie/big_poster/1010003088/full_PATHAAN-2D.jpg" alt="Third slide">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Featured Movie 3</h5>
+        <p>Description of Featured Movie 3.</p>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</section>
+
+
+<!-- Multiplex Section -->
+<section class="container my-5">
+  <div class="row mb-4 align-items-center">
+    <div class="col-md-9">
+      <h2>Multiplexes</h2>
+    </div>
+    <div class="col-md-3 d-flex justify-content-md-end">
+      <input type="text" class="form-control" placeholder="Search multiplexes...">
+    </div>
+  </div>
+  <div class="row">
+    <a href="multiplex.html" class="col-md-4 col-sm-6 multiplex-item">
+      <div class="card multiplex-card">
+        <img src="https://img.freepik.com/free-vector/mobile-theater-building_1441-3091.jpg" class="card-img mul-img" alt="Multiplex Image">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="card-title text-info mb-0">Multiplex 1</h5>
+            <span class="text-muted small d-flex align-items-center">
+              <i class="fa fa-film mr-1 text-primary"></i> No. of Shows: 4
+            </span>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <i class="fa fa-map-marker mr-2 text-danger"></i>
+              <span class="text-muted small">Area Name: XXX</span>
+            </div>
+            <div class="d-flex align-items-center">
+              <span class="text-muted small mr-2">4.5</span>
+              <i class="fa fa-star text-warning"></i>
+              <i class="fa fa-star text-warning"></i>
+              <i class="fa fa-star text-warning"></i>
+              <i class="fa fa-star text-warning"></i>
+              <i class="fa fa-star-half-o text-warning"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+    
+    <a href="multiplex.html" class="col-md-4 col-sm-6 multiplex-item">
+      <div class="card multiplex-card">
+        <img src="https://img.freepik.com/premium-vector/cinema-building-vector-illustration-background-city-night-movie-theater_584989-7.jpg?semt=ais_hybrid" class="card-img mul-img" alt="Multiplex Image">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="card-title text-info mb-0">Multiplex 1</h5>
+            <span class="text-muted small d-flex align-items-center">
+              <i class="fa fa-film mr-1 text-primary"></i> No. of Shows: 4
+            </span>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <i class="fa fa-map-marker mr-2 text-danger"></i>
+              <span class="text-muted small">Area Name: XXX</span>
+            </div>
+            <div class="d-flex align-items-center">
+              <span class="text-muted small mr-2">4.5</span>
+              <i class="fa fa-star text-warning"></i>
+              <i class="fa fa-star text-warning"></i>
+              <i class="fa fa-star text-warning"></i>
+              <i class="fa fa-star text-warning"></i>
+              <i class="fa fa-star-half-o text-warning"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <a href="multiplex.html" class="col-md-4 col-sm-6 multiplex-item">
+      <div class="card multiplex-card">
+        <img src="https://thumbs.dreamstime.com/b/theater-cinema-building-vector-easy-to-change-color-object-87801280.jpg" class="card-img mul-img" alt="Multiplex Image">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="card-title text-info mb-0">Multiplex 1</h5>
+            <span class="text-muted small d-flex align-items-center">
+              <i class="fa fa-film mr-1 text-primary"></i> No. of Shows: 4
+            </span>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <i class="fa fa-map-marker mr-2 text-danger"></i>
+              <span class="text-muted small">Area Name: XXX</span>
+            </div>
+            <div class="d-flex align-items-center">
+              <span class="text-muted small mr-2">4.5</span>
+              <i class="fa fa-star text-warning"></i>
+              <i class="fa fa-star text-warning"></i>
+              <i class="fa fa-star text-warning"></i>
+              <i class="fa fa-star text-warning"></i>
+              <i class="fa fa-star-half-o text-warning"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+    
+    <!-- Add more multiplexes as needed -->
+  </div>
+</section>
+
+<!-- Available Movies Section -->
+<section class="container-fluid available-movies">
+  <div class="container">
+    <div class="row mb-4 align-items-center">
+      <div class="col-md-9">
+        <h2>Available Movies</h2>
+      </div>
+      <div class="col-md-3 d-flex justify-content-md-end">
+        <input type="text" class="form-control" placeholder="Search movies...">
+      </div>
+    </div>
+    <div class="row">
+      <a href="movie_details.html" class="col-md-3 movie-item">
+        <div class="card">
+          <img src="https://i.pinimg.com/236x/69/85/2b/69852b991f3b0832e1e4a03b6492f280.jpg" class="card-img avail-img" alt="Movie Image">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <h5 class="card-title text-dark mb-0">Movie 2</h5>
+              <span class="text-muted small">Aug 15, 2024</span>
+            </div>
+            <p class="card-text text-secondary mb-2 small">
+              Action, Drama, Sci-Fi
+            </p>
+            <div class="d-flex align-items-center small text-muted">
+              <span class="badge badge-warning mr-1">8.5</span>
+              <small class="text-muted mr-3">IMDb Ratings</small>
+              <i class="fa fa-heart text-danger mr-1"></i> 1.2k
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="movie_details.html" class="col-md-3 movie-item">
+        <div class="card">
+          <img src="https://i.pinimg.com/236x/8e/4e/13/8e4e131e7ee47cfbbd48b9e9ccffda23.jpg" class="card-img avail-img" alt="Movie Image">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <h5 class="card-title text-dark mb-0">Movie 2</h5>
+              <span class="text-muted small">Aug 15, 2024</span>
+            </div>
+            <p class="card-text text-secondary mb-2 small">
+              Action, Drama, Sci-Fi
+            </p>
+            <div class="d-flex align-items-center small text-muted">
+              <span class="badge badge-warning mr-1">8.5</span>
+              <small class="text-muted mr-3">IMDb Ratings</small>
+              <i class="fa fa-heart text-danger mr-1"></i> 1.2k
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="movie_details.html" class="col-md-3 movie-item">
+        <div class="card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa36h8mNOEhstW13bZPqYYC-BpiusQQJc2Kg&s"  class="card-img avail-img" alt="Movie Image">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <h5 class="card-title text-dark mb-0">Movie 2</h5>
+              <span class="text-muted small">Aug 15, 2024</span>
+            </div>
+            <p class="card-text text-secondary mb-2 small">
+              Action, Drama, Sci-Fi
+            </p>
+            <div class="d-flex align-items-center small text-muted">
+              <span class="badge badge-warning mr-1">8.5</span>
+              <small class="text-muted mr-3">IMDb Ratings</small>
+              <i class="fa fa-heart text-danger mr-1"></i> 1.2k
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="movie_details.html" class="col-md-3 movie-item">
+        <div class="card">
+          <img src="https://i.pinimg.com/236x/8e/60/5f/8e605feff74ec94537d5c273a1d20a18.jpg" class="card-img avail-img" alt="Movie Image">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <h5 class="card-title text-dark mb-0">Movie 2</h5>
+              <span class="text-muted small">Aug 15, 2024</span>
+            </div>
+            <p class="card-text text-secondary mb-2 small">
+              Action, Drama, Sci-Fi
+            </p>
+            <div class="d-flex align-items-center small text-muted">
+              <span class="badge badge-warning mr-1">8.5</span>
+              <small class="text-muted mr-3">IMDb Ratings</small>
+              <i class="fa fa-heart text-danger mr-1"></i> 1.2k
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+      <!-- Add more movies as needed -->
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer text-center">
+  <div class="container">
+    <p class="mb-1"><strong>Movie<span class="text-warning">Book</span></strong> &copy; 2024</p>
+    <div class="social-icons mb-3">
+      <a href="https://twitter.com" target="_blank" class="mr-3"><i class="fa fa-twitter fa-lg"></i></a>
+      <a href="https://instagram.com" target="_blank" class="mr-3"><i class="fa fa-instagram fa-lg"></i></a>
+      <a href="https://youtube.com" target="_blank"><i class="fa fa-youtube fa-lg"></i></a>
+    </div>
+    <div>
+      <a href="about_us.html" class="text-white">About Us</a> | 
+      <a href="contact_us.html" class="text-white">Contact</a> | 
+      <a href="privacy_policy.html" class="text-white">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Online Movie Booking</title>
+    <link rel="icon" href="https://www.freeiconspng.com/thumbs/hd-tickets/download-ticket-ticket-free-entertainment-icon-orange-ticket-design-0.png">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .payment-page {
+            padding: 50px 0;
+            background-color: #f8f9fa;
+        }
+        .payment-page h2 {
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        .payment-options .card {
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .payment-options .card-header {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        .payment-options .card-body {
+            background-color: white;
+            display: none;
+        }
+        .payment-options .card-body.show {
+            display: block;
+        }
+        .form-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .form-container h3 {
+            margin-bottom: 20px;
+        }
+        .payment-methods {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        }
+        .payment-methods .btn {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            text-align: left;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .payment-methods .btn img {
+            width: 40px;
+            height: auto;
+            margin-right: 10px;
+        }
+        .payment-methods .btn.selected {
+            background-color: #007bff;
+            color: white;
+        }
+        .payment-methods .btn.selected img {
+            filter: none; /* Reset filter to ensure the icon remains visible */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+<header class="bg-dark text-white py-2 sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <a class="navbar-brand" href="index.html">Movie<span class="text-warning">Book</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <form class="form-inline my-2 my-lg-0 ml-auto">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search movies..." aria-label="Search">
+          <select class="custom-select mr-sm-2 my-2 my-sm-0">
+            <option selected>Select City</option>
+            <option value="nyc" selected>New York</option>
+            <option value="la">Los Angeles</option>
+            <option value="ch">Chicago</option>
+          </select>
+          <div class="dropdown">
+            <button class="btn btn-outline-secondary text-white dropdown-toggle" type="button" id="userMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="User" class="rounded-circle border mr-2"> John Doe
+            </button>
+            <div class="dropdown-menu" aria-labelledby="userMenuButton">
+              <a class="dropdown-item text-info" href="profile.html">Profile</a>
+              <a class="dropdown-item text-info" href="dashboard.html">Dashboard</a>
+              <a class="dropdown-item text-danger" href="#">Sign Out</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+    <!-- Payment Section -->
+    <section class="payment-page">
+        <div class="container">
+            <h2 class="text-center">Confirm your tickets</h2>
+            <div class="row">
+                <!-- Payment Summary -->
+                <div class="col-md-6 my-3">
+                    <div class="form-container">
+                        <h3>Payment Summary</h3>
+                        <p class="text-secondary"><strong>Amount:</strong> $20.00</p>
+                        <p class="text-secondary"><strong>Movie:</strong> The Great Movie</p>
+                        <p class="text-secondary"><strong>Date & Time:</strong> August 25, 2024, 7:00 PM</p>
+                        <p class="text-secondary"><strong>Seats:</strong> A1, A2, A3</p>
+                        <p class="text-secondary">Thank you for booking with MovieBook. If you have any issues with your payment, please contact our support team.</p>
+                    </div>
+                </div>
+                <!-- Payment Options -->
+                <div class="col-md-6 payment-options my-3">
+                    <div class="card">
+                        <div class="card-header" id="cardHeading">
+                            <h5 class="card-title">Credit/Debit Card</h5>
+                        </div>
+                        <div class="card-body" id="cardDetails">
+                            <form>
+                                <div class="form-group">
+                                    <label for="cardNumber">Card Number</label>
+                                    <input type="text" class="form-control" id="cardNumber" placeholder="Enter your card number" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardName">Name on Card</label>
+                                    <input type="text" class="form-control" id="cardName" placeholder="Enter name on card" required>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="expiryDate">Expiry Date</label>
+                                        <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="cvv">CVV</label>
+                                        <input type="text" class="form-control" id="cvv" placeholder="CVV" required>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">Pay Now</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" id="upiHeading">
+                            <h5 class="card-title">UPI Payment</h5>
+                        </div>
+                        <div class="card-body" id="upiDetails">
+                            <form>
+                                <div class="form-group">
+                                    <label for="upiId">UPI ID</label>
+                                    <input type="text" class="form-control" id="upiId" placeholder="Enter your UPI ID" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">Pay with UPI</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" id="onlineHeading">
+                            <h5 class="card-title">Online Payment</h5>
+                        </div>
+                        <div class="card-body" id="onlineDetails">
+                            <div class="payment-methods">
+                                <div class="mb-3">
+                                    <button class="btn btn-light w-100 payment-option" data-method="gpay">
+                                        <img src="images/google_pay.png" alt="Google Pay" class="mr-2"> Google Pay
+                                    </button>
+                                </div>
+                                <div class="mb-3">
+                                    <button class="btn btn-light w-100 payment-option" data-method="paytm">
+                                        <img src="images/paytm.png" alt="Paytm" class="mr-2"> Paytm
+                                    </button>
+                                </div>
+                                <div class="mb-3">
+                                    <button class="btn btn-light w-100 payment-option" data-method="phonepe">
+                                        <img src="images/phone_pay.png" alt="PhonePe" class="mr-2"> PhonePe
+                                    </button>
+                                </div>
+                                <div class="mb-3">
+                                    <button class="btn btn-light w-100 payment-option" data-method="lazypay">
+                                        <img src="images/lazy_pay.png" alt="LazyPay" class="mr-2"> LazyPay
+                                    </button>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary w-100 mt-3" id="proceedButton">Proceed to Pay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer text-center">
+        <div class="container">
+        <p class="mb-1"><strong>Movie<span class="text-warning">Book</span></strong> &copy; 2024</p>
+        <div class="social-icons mb-3">
+            <a href="https://twitter.com" target="_blank" class="mr-3"><i class="fa fa-twitter fa-lg"></i></a>
+            <a href="https://instagram.com" target="_blank" class="mr-3"><i class="fa fa-instagram fa-lg"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="fa fa-youtube fa-lg"></i></a>
+        </div>
+        <div>
+            <a href="about_us.html" class="text-white">About Us</a> | 
+            <a href="contact_us.html" class="text-white">Contact</a> | 
+            <a href="privacy_policy.html" class="text-white">Privacy Policy</a>
+        </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Toggle the card details display
+        document.getElementById('cardHeading').addEventListener('click', function() {
+            var cardDetails = document.getElementById('cardDetails');
+            cardDetails.classList.toggle('show');
+        });
+
+        document.getElementById('upiHeading').addEventListener('click', function() {
+            var upiDetails = document.getElementById('upiDetails');
+            upiDetails.classList.toggle('show');
+        });
+
+        document.getElementById('onlineHeading').addEventListener('click', function() {
+            var onlineDetails = document.getElementById('onlineDetails');
+            onlineDetails.classList.toggle('show');
+        });
+
+        document.querySelectorAll('.payment-option').forEach(button => {
+        button.addEventListener('click', function() {
+            document.querySelectorAll('.payment-option').forEach(btn => btn.classList.remove('selected'));
+            this.classList.add('selected');
+        });
+        });
+
+        document.getElementById('proceedButton').addEventListener('click', function() {
+            const selectedOption = document.querySelector('.payment-option.selected');
+            if (selectedOption) {
+                alert(`Proceeding with ${selectedOption.textContent.trim()}`);
+                // Add further payment processing logic here
+            } else {
+                alert('Please select a payment method');
+            }
+        });
+    </script>
+</body>
+</hml>

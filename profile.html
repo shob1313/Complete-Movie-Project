@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MovieBook</title>
+  <link rel="icon" href="https://www.freeiconspng.com/thumbs/hd-tickets/download-ticket-ticket-free-entertainment-icon-orange-ticket-design-0.png">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .table {
+      border-radius: 15px !important; 
+      overflow: hidden; 
+    }
+    .table th, .table td {
+      vertical-align: middle;
+    }
+  </style>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="bg-dark text-white py-2 sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-dark ">
+    <a class="navbar-brand" href="index.html">Movie<span class="text-warning">Book</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <form class="form-inline my-2 my-lg-0 ml-auto">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search movies..." aria-label="Search">
+        <select class="custom-select mr-sm-2 my-2 my-sm-0">
+          <option selected>Select City</option>
+          <option value="nyc" selected>New York</option>
+          <option value="la">Los Angeles</option>
+          <option value="ch">Chicago</option>
+        </select>
+        <div class="dropdown">
+          <button class="btn btn-outline-secondary text-white dropdown-toggle" type="button" id="userMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="User" class="rounded-circle border mr-2"> John Doe
+          </button>
+          <div class="dropdown-menu" aria-labelledby="userMenuButton">
+            <a class="dropdown-item text-info" href="profile.html">Profile</a>
+            <a class="dropdown-item text-info" href="dashboard.html">Dashboard</a>
+            <a class="dropdown-item text-danger" href="#">Sign Out</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </nav>
+</header>
+<div class="container my-5">
+  <div class="card shadow-lg border-light no-hover-effect">
+    <div class="card-body">
+      <div class="row">
+        <!-- Image Section -->
+        <div class="col-md-4 d-flex align-items-center justify-content-center mb-4 mb-md-0">
+          <img src="https://www.svgrepo.com/show/382109/male-avatar-boy-face-man-user-7.svg" alt="User Image" class="rounded-circle border shadow img-fluid" style="width: 150px; height: 150px;">
+        </div>
+        <!-- Form Section -->
+        <div class="col-md-8">
+          <h4 class="text-primary my-3 text-center text-md-left">Edit User Profile</h4>
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-5">
+                <label for="name" class="font-weight-bold text-secondary">Name</label>
+                <input type="text" size="10" class="form-control form-control-sm" id="name" placeholder="Enter your name" value="John Doe">
+              </div>
+              <div class="col-md-1"></div>
+              <div class="form-group col-md-5">
+                <label for="email" class="font-weight-bold text-secondary">Email</label>
+                <input type="email" class="form-control form-control-sm" id="email" placeholder="Enter your email" value="john.doe@example.com">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-5">
+                <label for="password" class="font-weight-bold text-secondary">Password</label>
+                <input type="password" class="form-control form-control-sm" id="password" placeholder="Enter your password">
+              </div>
+              <div class="col-md-1"></div>
+              <div class="form-group col-md-5">
+                <label for="security-question" class="font-weight-bold text-secondary">Security Question</label>
+                <select class="form-control form-control-sm" id="security-question">
+                  <option selected>What was the name of your first pet?</option>
+                  <option>What is your mother's maiden name?</option>
+                  <option>What is your favorite book?</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-5">
+                <label for="security-answer" class="font-weight-bold text-secondary">Security Answer</label>
+                <input type="text" class="form-control form-control-sm" id="security-answer" placeholder="Enter your answer" value="Fluffy">
+              </div>
+            </div>
+            <div class="text-center my-2">
+              <button type="reset" class="btn btn-outline-danger btn-sm mr-1">Reset</button>
+              <button type="submit" class="btn btn-outline-primary btn-sm">Save Changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<section class="container">
+  <div class="card my-5 shadow-lg border-light no-hover-effect">
+    <div class="card-body mx-4">
+    <div class="d-flex align-items-center justify-content-center mt-3 mb-0">
+      <h4 class="text-primary ">Purchase History</h4>
+    </div>
+      <div class="table-responsive mx-3">
+        <table id="Table5" class="table table-md  table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th>Movie</th>
+              <th>Multiplex</th>
+              <th>Booking Date</th>
+              <th>Show Time</th>
+              <th>Seat(s)</th>
+              <th>Amount</th>
+              <th>Transaction ID</th>
+              <th>Payment Mode</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tholi Prema</td>
+              <td>Inox PVR</td>
+              <td>15 Aug, 2024</td>
+              <td>06:00 AM</td>
+              <td>A5, A6</td>
+              <td>₹500</td>
+              <td>TXN123456789</td>
+              <td>Credit Card</td>
+            </tr>
+            <tr>
+              <td>Tholi Prema</td>
+              <td>Inox PVR</td>
+              <td>15 Aug, 2024</td>
+              <td>06:00 AM</td>
+              <td>A5, A6</td>
+              <td>₹500</td>
+              <td>TXN123456789</td>
+              <td>Credit Card</td>
+            </tr>
+            <!-- Additional rows can be added here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer text-center">
+  <div class="container">
+    <p class="mb-1"><strong>Movie<span class="text-warning">Book</span></strong> &copy; 2024</p>
+    <div class="social-icons mb-3">
+      <a href="https://twitter.com" target="_blank" class="mr-3"><i class="fa fa-twitter fa-lg"></i></a>
+      <a href="https://instagram.com" target="_blank" class="mr-3"><i class="fa fa-instagram fa-lg"></i></a>
+      <a href="https://youtube.com" target="_blank"><i class="fa fa-youtube fa-lg"></i></a>
+    </div>
+    <div>
+      <a href="about_us.html" class="text-white">About Us</a> | 
+      <a href="contact_us.html" class="text-white">Contact</a> | 
+      <a href="privacy_policy.html" class="text-white">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#Table5').DataTable({
+      paging: true,   
+      searching: true, 
+      ordering: true, 
+      info: true,      
+      lengthChange: true
+    });
+  });
+</script>
+</body>
+</html>
