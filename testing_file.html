@@ -9,8 +9,14 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
+    /* Custom CSS for Carousel */
+    .carousel-inner {
+      display: flex;
+    }
+
     .carousel-item {
-      transition: transform 0.6s ease-in-out;
+      flex: 1 0 33.3333%; /* Show three items at once */
+      padding: 15px;
     }
 
     .carousel-control-prev,
@@ -25,11 +31,6 @@
       background-color: rgba(0, 0, 0, 0.5);
       border-radius: 50%;
       padding: 15px;
-    }
-
-    .carousel-inner {
-      max-width: 600px;
-      margin: 0 auto;
     }
   </style>
 </head>
@@ -105,157 +106,93 @@
   </div>
 </section>
 
-<section class="container">
-  <div class="card my-4 no-hover-effect shadow">
-    <div class="d-flex align-items-center justify-content-center mt-4">
-      <h2 class="golden-gradient-text mr-3">Reviews</h2>
-      <button class="btn btn-outline-warning btn-sm" id="addReviewBtn">Add Your's</button>
-    </div>
-    <div class="card-body">
-      <div id="reviewCarousel" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <!-- Review 1 -->
-          <div class="carousel-item active">
-            <div class="card h-100 border-primary no-hover-effect shadow">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-2">
-                  <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="User Image" class="rounded-circle border mr-2" style="width: 40px; height: 40px;">
-                  <div>
-                    <h6 class="mb-0">John Doe</h6>
-                    <small class="text-muted">
-                      <i class="fa fa-star text-warning"></i>
-                      <i class="fa fa-star text-warning"></i>
-                      <i class="fa fa-star text-warning"></i>
-                      <i class="fa fa-star-half-o text-warning"></i>
-                      <i class="fa fa-star-o text-warning"></i>
-                    </small>
+<section class="container my-5">
+    <div class="card my-4 no-hover-effect shadow">
+      <div class="d-flex align-items-center justify-content-center mt-4">
+        <h2 class="golden-gradient-text mr-3">Reviews</h2>
+        <button class="btn btn-outline-warning btn-sm" id="addReviewBtn">Add Your's</button>
+      </div>
+      <div class="card-body">
+        <div id="reviewCarousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="card h-100 border-primary no-hover-effect shadow">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-2">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="User Image" class="rounded-circle border mr-2" style="width: 40px; height: 40px;">
+                    <div>
+                      <h6 class="mb-0">John Doe</h6>
+                      <small class="text-muted">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star-half-o text-warning"></i>
+                        <i class="fa fa-star-o text-warning"></i>
+                      </small>
+                    </div>
                   </div>
+                  <p class="mb-0">Great movie with an exciting plot and stunning visuals!</p>
                 </div>
-                <p class="mb-0">Great movie with an exciting plot and stunning visuals!</p>
               </div>
             </div>
-          </div>
-          <!-- Review 2 -->
-          <div class="carousel-item">
-            <div class="card h-100 border-primary no-hover-effect shadow">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-2">
-                  <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="User Image" class="rounded-circle border mr-2" style="width: 40px; height: 40px;">
-                  <div>
-                    <h6 class="mb-0">Jane Smith</h6>
-                    <small class="text-muted">
-                      <i class="fa fa-star text-warning"></i>
-                      <i class="fa fa-star text-warning"></i>
-                      <i class="fa fa-star text-warning"></i>
-                      <i class="fa fa-star text-warning"></i>
-                      <i class="fa fa-star-o text-warning"></i>
-                    </small>
+            <div class="carousel-item">
+              <div class="card h-100 border-primary no-hover-effect shadow">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-2">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="User Image" class="rounded-circle border mr-2" style="width: 40px; height: 40px;">
+                    <div>
+                      <h6 class="mb-0">Jane Smith</h6>
+                      <small class="text-muted">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star-o text-warning"></i>
+                      </small>
+                    </div>
                   </div>
+                  <p class="mb-0">Incredible performance by the lead actors. A must-watch!</p>
                 </div>
-                <p class="mb-0">Incredible performance by the lead actors. A must-watch!</p>
               </div>
             </div>
-          </div>
-          <!-- Review 3 -->
-          <div class="carousel-item">
-            <div class="card h-100 border-primary no-hover-effect shadow">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-2">
-                  <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="User Image" class="rounded-circle border mr-2" style="width: 40px; height: 40px;">
-                  <div>
-                    <h6 class="mb-0">Tarun</h6>
-                    <small class="text-muted">
-                      <i class="fa fa-star text-warning"></i>
-                      <i class="fa fa-star text-warning"></i>
-                      <i class="fa fa-star text-warning"></i>
-                      <i class="fa fa-star-half-o text-warning"></i>
-                      <i class="fa fa-star-o text-warning"></i>
-                    </small>
+            <div class="carousel-item">
+              <div class="card h-100 border-primary no-hover-effect shadow">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-2">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="User Image" class="rounded-circle border mr-2" style="width: 40px; height: 40px;">
+                    <div>
+                      <h6 class="mb-0">Mike Johnson</h6>
+                      <small class="text-muted">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star-half-o text-warning"></i>
+                        <i class="fa fa-star-o text-warning"></i>
+                      </small>
+                    </div>
                   </div>
+                  <p class="mb-0">Fantastic storyline with unexpected twists. Highly recommended!</p>
                 </div>
-                <p class="mb-0">Great movie with an exciting plot and stunning visuals!</p>
               </div>
             </div>
+            <!-- Add more carousel items here if needed -->
           </div>
-          <!-- Review 4 -->
-          <div class="carousel-item">
-            <div class="card h-100 border-primary no-hover-effect shadow">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-2">
-                  <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="User Image" class="rounded-circle border mr-2" style="width: 40px; height: 40px;">
-                  <div>
-                    <h6 class="mb-0">Vamshi</h6>
-                    <small class="text-muted">
-                      <i class="fa fa-star text-warning"></i>
-                      <i class="fa fa-star text-warning"></i>
-                      <i class="fa fa-star text-warning"></i>
-                      <i class="fa fa-star text-warning"></i>
-                      <i class="fa fa-star-o text-warning"></i>
-                    </small>
-                  </div>
-                </div>
-                <p class="mb-0">Incredible performance by the lead actors. A must-watch!</p>
-              </div>
-            </div>
-          </div>
-          <!-- Review 5 -->
-          <div class="carousel-item">
-            <div class="card h-100 border-primary no-hover-effect shadow">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-2">
-                  <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="User Image" class="rounded-circle border mr-2" style="width: 40px; height: 40px;">
-                  <div>
-                    <h6 class="mb-0">Rama</h6>
-                    <small class="text-muted">
-                      <i class="fa fa-star text-warning"></i>
-                      <i class="fa fa-star text-warning"></i>
-                      <i class="fa fa-star text-warning"></i>
-                      <i class="fa fa-star-half-o text-warning"></i>
-                      <i class="fa fa-star-o text-warning"></i>
-                    </small>
-                  </div>
-                </div>
-                <p class="mb-0">Great movie with an exciting plot and stunning visuals!</p>
-              </div>
-            </div>
-          </div>
-          <!-- Review 6 -->
-          <div class="carousel-item">
-            <div class="card h-100 border-primary no-hover-effect shadow">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-2">
-                  <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="User Image" class="rounded-circle border mr-2" style="width: 40px; height: 40px;">
-                  <div>
-                    <h6 class="mb-0">Shobith</h6>
-                    <small class="text-muted">
-                      <i class="fa fa-star text-warning"></i>
-                      <i class="fa fa-star text-warning"></i>
-                      <i class="fa fa-star text-warning"></i>
-                      <i class="fa fa-star text-warning"></i>
-                      <i class="fa fa-star-o text-warning"></i>
-                    </small>
-                  </div>
-                </div>
-                <p class="mb-0">Ichipad movie asalu.Peaks anthe!!!</p>
-              </div>
-            </div>
-          </div>
-          <!-- Add more review items as needed -->
+  
+          <!-- Controls -->
+          <a class="carousel-control-prev" href="#reviewCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#reviewCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
-        <a class="carousel-control-prev" href="#reviewCarousel" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#reviewCarousel" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
+S
 <!-- Modal for Adding Review -->
 <div class="modal fade" id="addReviewModal" tabindex="-1" aria-labelledby="addReviewModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -339,21 +276,90 @@ document.getElementById("addReviewBtn").addEventListener("click", function() {
 document.getElementById("rating").addEventListener("input", function() {
     document.getElementById("ratingValue").textContent = `Rating: ${this.value}`;
 });
+  $(document).ready(function() {
+    let items = $('.carousel-item');
+    let itemWidth = items.width();
+    let scrollAmount = itemWidth;
 
-$(document).ready(function() {
-  $('#reviewCarousel').carousel({
-    interval: 5000, // Change slide every 5 seconds
-    pause: "hover" // Pause on hover
-  });
+    $('.carousel-control-next').click(function() {
+      $('.carousel-inner').animate({ scrollLeft: '+=' + scrollAmount }, 800);
+    });
 
-  // Smooth scrolling effect
-  $('#reviewCarousel').on('slide.bs.carousel', function(e) {
-    var $activeItem = $(e.relatedTarget);
-    var $items = $activeItem.parent().children();
-    var $nextItem = $items.eq((($items.index($activeItem) + 1) % $items.length));
-    $nextItem.css('transition', 'transform 0.6s ease-in-out');
+    $('.carousel-control-prev').click(function() {
+      $('.carousel-inner').animate({ scrollLeft: '-=' + scrollAmount }, 800);
+    });
+
+    // Auto-scrolling (optional)
+    setInterval(function() {
+      $('.carousel-control-next').click();
+    }, 5000); // Scrolls every 5 seconds
   });
-});
+// $(document).ready(function() {
+//   const reviews = [
+//     { name: "John Doe", rating: 3.5, comment: "Great movie with an exciting plot and stunning visuals!" },
+//     { name: "Jane Smith", rating: 4, comment: "Incredible performance by the lead actors. A must-watch!" },
+//     { name: "Mike Johnson", rating: 4.5, comment: "Fantastic storyline with unexpected twists. Highly recommended!" },
+//     { name: "Emily Brown", rating: 5, comment: "One of the best movies I've seen this year. Absolutely loved it!" },
+//     { name: "Chris Lee", rating: 3, comment: "Decent movie, but the plot could have been better developed." },
+//     { name: "Sarah Wilson", rating: 4, comment: "Impressive special effects and a captivating storyline." }
+//   ];
+
+//   let currentIndex = 0;
+
+//   function createReviewCard(review) {
+//     return `
+//       <div class="col-md-4">
+//         <div class="card h-100 border-primary no-hover-effect shadow">
+//           <div class="card-body">
+//             <div class="d-flex align-items-center mb-2">
+//               <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="User Image" class="rounded-circle border mr-2" style="width: 40px; height: 40px;">
+//               <div>
+//                 <h6 class="mb-0">${review.name}</h6>
+//                 <small class="text-muted">
+//                   ${getStarRating(review.rating)}
+//                 </small>
+//               </div>
+//             </div>
+//             <p class="mb-0">${review.comment}</p>
+//           </div>
+//         </div>
+//       </div>
+//     `;
+//   }
+
+//   function getStarRating(rating) {
+//     let stars = '';
+//     for (let i = 1; i <= 5; i++) {
+//       if (i <= rating) {
+//         stars += '<i class="fa fa-star text-warning"></i>';
+//       } else if (i - 0.5 <= rating) {
+//         stars += '<i class="fa fa-star-half-o text-warning"></i>';
+//       } else {
+//         stars += '<i class="fa fa-star-o text-warning"></i>';
+//       }
+//     }
+//     return stars;
+//   }
+
+//   function updateCarousel() {
+//     let reviewsToShow = '';
+//     for (let i = 0; i < 3; i++) {
+//       reviewsToShow += createReviewCard(reviews[(currentIndex + i) % reviews.length]);
+//     }
+//     $('.carousel-inner .row').html(reviewsToShow);
+//   }
+
+//   updateCarousel();
+
+//   // Automatically advance the carousel and update content every 5 seconds
+//   setInterval(function() {
+//     $('#reviewCarousel').carousel('next');
+//     currentIndex = (currentIndex + 3) % reviews.length; // Move to the next set of reviews
+//     updateCarousel();
+//   }, 5000);
+// });
+
+
 </script>
 </body>
 </html>
